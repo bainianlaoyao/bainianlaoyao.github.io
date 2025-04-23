@@ -242,23 +242,23 @@ custom_css:
 # 网页访问统计
 # Analysis of website visitors
 web_analytics:
-  enable: false
+  enable: true
 
   # 遵循访客浏览器"请勿追踪"的设置，如果开启则不统计其访问
   # Follow the "Do Not Track" setting of the visitor's browser
   # See: https://www.w3.org/TR/tracking-dnt/
-  follow_dnt: true
+  follow_dnt: false
 
   # 百度统计的 Key，值需要获取下方链接中 `hm.js?` 后边的字符串
   # Baidu analytics, get the string behind `hm.js?`
   # See: https://tongji.baidu.com/sc-web/10000033910/home/site/getjs?siteId=13751376
-  baidu:
+  baidu: 6fb38cd5121fb7a214b266c9993344a5
 
   # Google Analytics 4 的媒体资源 ID
   # Google Analytics 4 MEASUREMENT_ID
   # See: https://support.google.com/analytics/answer/9744165#zippy=%2Cin-this-article
   google:
-    measurement_id:
+    measurement_id: G-BL71P1DLBY
 
   # 腾讯统计的 H5 App ID，开启高级功能才有cid
   # Tencent analytics, set APP ID
@@ -348,7 +348,7 @@ iconfont: //at.alicdn.com/t/c/font_1736178_k526ubmyhba.css
 navbar:
   # 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示
   # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
-  blog_title: "Fluid"
+  blog_title: "百年老妖"
 
   # 导航栏毛玻璃特效，实验性功能，可能会造成页面滚动掉帧和抖动，部分浏览器不支持会自动不生效
   # Navigation bar frosted glass special animation. It is an experimental feature
@@ -510,7 +510,7 @@ index:
 
       # 请求地址
       # Request url
-      url: "https://v1.hitokoto.cn/?c=a&c=b&c=c&c=h"
+      url: "https://v1.hitokoto.cn/?c=a&c=b&c=c&c=k"
 
       # 请求方法
       # Request method
