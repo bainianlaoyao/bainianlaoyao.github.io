@@ -10,7 +10,8 @@ tags:
  - Linux
  - 自建服务
 ---
-**目录**
+## 目录
+- [目录](#目录)
 - [什么是NAS](#什么是nas)
 - [NAS的环境搭建](#nas的环境搭建)
   - [硬件](#硬件)
@@ -31,6 +32,9 @@ tags:
     - [Docker](#docker)
       - [Windows下安装Docker](#windows下安装docker)
       - [Linux下安装Docker](#linux下安装docker)
+      - [图形化docker管理](#图形化docker管理)
+        - [安装](#安装)
+        - [网络问题](#网络问题)
 
 
 ## 什么是NAS
@@ -159,6 +163,52 @@ sudo docker run hello-world
 如果你使用的是树莓派, 参阅[树莓派安装docker](https://pidoc.cn/docs/pidoc/install_docker/)即可.
 
 至此, 你已经完成了NAS的基础环境搭建, 我将在后续的教程中介绍如何使用Docker搭建各种服务, 例如媒体服务器、私有云等.
+
+##### 图形化docker管理
+Portainer是一个开源的Docker容器管理工具, 可以在网页中用图形化工具管理Docker 容器. 你可以在Docker中安装Portainer(惊天大套娃), 然后通过浏览器访问Portainer的Web界面来管理Docker容器.
+
+###### 安装
+新建一个文件夹名为`portainer`, 在里面
+- 创建一个文件名为`docker-compose.yml`. 
+- 创建一个文件夹名为`data`
+
+```bash
+# /.../Programfiles
+mkdir portainer
+cd portainer
+$ /../programfiles/portainer
+touch docker-compose.yml
+mkdir data
+```
+然后在`docker-compose.yml`中写入以下内容:
+```yaml
+# docker-compose.yml (无须修改)
+version: '3.8' 
+services:
+  portainer:
+    image: portainer/portainer-ce:lts
+    container_name: portainer
+    restart: always
+    ports:
+      - "8000:8000"
+      - "9443:9443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./portainer_data:/data  # 修改为相对路径[1][2]
+```
+然后执行以下命令:
+```bash
+# /.../Programfiles/portainer
+docker-compose up -d
+```
+在浏览器中访问`http://localhost:9443`, 你会看到Portainer的登录界面, 输入用户名和密码即可登录.
+
+详细的设置可参阅[Portainer的官方文档](https://docs.portainer.io/start/install-ce/server/setup).
+
+###### 网络问题
+如果你被GFW限制了, 可以[尝试换源(linux)](https://zhuanlan.zhihu.com/p/28662850275)
+
+[docker换源(windows)](https://zhuanlan.zhihu.com/p/28662850275)
 
 [raid_link]: https://blog.csdn.net/qq_41819851/article/details/131106294
 [系统库]: https://www.xitongku.com/index.html

@@ -6,7 +6,7 @@
 title: 百年老妖
 subtitle: '百年老妖的胡言乱语'
 description: ''
-keywords: ['编程','游戏','生活']
+keywords: ['NAS搭建','个人NAS','私有云','家庭服务器','Docker','Linux','自动化追番','qbittorrent','ANI-RSS','AutoBangumi','番剧','动漫','百年老妖']
 author: 百年老妖
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -28,10 +28,10 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: 
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :title-:year-:month.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
