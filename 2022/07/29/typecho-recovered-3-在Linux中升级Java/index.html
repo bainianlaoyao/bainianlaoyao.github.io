@@ -1,0 +1,781 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="百年老妖">
+  <meta name="keywords" content="NAS搭建,个人NAS,私有云,家庭服务器,Docker,Linux,自动化追番,qbittorrent,ANI-RSS,AutoBangumi,番剧,动漫,百年老妖">
+  
+    <meta name="description" content="java鑲畾蹇礰鎶撴硶&#96;鍛€锛?  鍦ㄥ畨瑁厀ebgoat鐨勬椂鍊欓亣鍒颁簡Java鐗堟湰闂锛岃蛋浜嗗崐涓笅鍗堝集璺箣鍚庣粓浜庢垚鍔熷崌绾т簡Java锛岀壒姝よ褰曘€? 鐢变簬鍦╧ali绯荤粺鍐呮搷浣滐紝鎵€浠ユ垜鐨勫寘閮芥槸鍩轰簬Debian鐨勶紝闇€瑕佹牴鎹嚜宸辩殑绯荤粺鏇存敼銆? 瑕佸仛涓ょ偣锛?   瀹夎Java  鍒囨崲鐗堟湰  瀹夎Java 娉ㄦ剰锛屼互涓嬫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="鍦↙inux涓崌绾ava">
+<meta property="og:url" content="https://bainianlaoyao.github.io/2022/07/29/typecho-recovered-3-%E5%9C%A8Linux%E4%B8%AD%E5%8D%87%E7%BA%A7Java/index.html">
+<meta property="og:site_name" content="百年老妖">
+<meta property="og:description" content="java鑲畾蹇礰鎶撴硶&#96;鍛€锛?  鍦ㄥ畨瑁厀ebgoat鐨勬椂鍊欓亣鍒颁簡Java鐗堟湰闂锛岃蛋浜嗗崐涓笅鍗堝集璺箣鍚庣粓浜庢垚鍔熷崌绾т簡Java锛岀壒姝よ褰曘€? 鐢变簬鍦╧ali绯荤粺鍐呮搷浣滐紝鎵€浠ユ垜鐨勫寘閮芥槸鍩轰簬Debian鐨勶紝闇€瑕佹牴鎹嚜宸辩殑绯荤粺鏇存敼銆? 瑕佸仛涓ょ偣锛?   瀹夎Java  鍒囨崲鐗堟湰  瀹夎Java 娉ㄦ剰锛屼互涓嬫">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-28T19:16:00.000Z">
+<meta property="article:modified_time" content="2023-08-22T04:39:48.000Z">
+<meta property="article:author" content="百年老妖">
+<meta property="article:tag" content="NAS搭建">
+<meta property="article:tag" content="个人NAS">
+<meta property="article:tag" content="私有云">
+<meta property="article:tag" content="家庭服务器">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="自动化追番">
+<meta property="article:tag" content="qbittorrent">
+<meta property="article:tag" content="ANI-RSS">
+<meta property="article:tag" content="AutoBangumi">
+<meta property="article:tag" content="番剧">
+<meta property="article:tag" content="动漫">
+<meta property="article:tag" content="百年老妖">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>鍦↙inux涓崌绾ava :) 百年老妖</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"bainianlaoyao.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":" ᕕ( ᐛ )ᕗ","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":"6fb38cd5121fb7a214b266c9993344a5","google":{"measurement_id":"G-BL71P1DLBY"},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"tIgEmj1c50tYZZIQqDDvQRvy-gzGzoHsz","app_key":"3JjijiSrNdKEpWewU78ccVBw","server_url":"https://tigemj1c.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?6fb38cd5121fb7a214b266c9993344a5";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-BL71P1DLBY", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-BL71P1DLBY');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>百年老妖</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="鍦↙inux涓崌绾ava"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-07-29 03:16" pubdate>
+          2022年7月29日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          624 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">鍦↙inux涓崌绾ava</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2023年8月22日 下午
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>java鑲畾蹇礰鎶撴硶&#96;鍛€锛?</p>
+</blockquote>
+<p>鍦ㄥ畨瑁厀ebgoat鐨勬椂鍊欓亣鍒颁簡Java鐗堟湰闂锛岃蛋浜嗗崐涓笅鍗堝集璺箣鍚庣粓浜庢垚鍔熷崌绾т簡Java锛岀壒姝よ褰曘€?</p>
+<p>鐢变簬鍦╧ali绯荤粺鍐呮搷浣滐紝鎵€浠ユ垜鐨勫寘閮芥槸鍩轰簬Debian鐨勶紝闇€瑕佹牴鎹嚜宸辩殑绯荤粺鏇存敼銆?</p>
+<p>瑕佸仛涓ょ偣锛?</p>
+<ul>
+<li><input disabled="" type="checkbox"> 瀹夎Java</li>
+<li><input disabled="" type="checkbox"> 鍒囨崲鐗堟湰</li>
+</ul>
+<h3 id="瀹夎Java"><a href="#瀹夎Java" class="headerlink" title="瀹夎Java"></a>瀹夎Java</h3><blockquote>
+<p>娉ㄦ剰锛屼互涓嬫墍鏈夊懡浠ょ殑jdk鏂囦欢鍚嶉兘闇€鑷鏇存敼涓鸿嚜宸变笅杞界殑瀵瑰簲鐗堟湰涔嬪悕</p>
+</blockquote>
+<ul>
+<li>*<em>1锛屽畼缃戣幏鍙朖ava.deb 鍖?</em></li>
+</ul>
+<p>[瀹樼綉][1]<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/#java17">https://www.oracle.com/java/technologies/downloads/#java17</a></p>
+<ul>
+<li><strong>2锛屽畨瑁卝dk.deb</strong></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">dpkg -<span class="hljs-selector-tag">i</span> jdk<span class="hljs-selector-class">.deb</span><br></code></pre></td></tr></table></figure>
+
+<p>鍙兘浼氶亣鍒颁緷璧栫己澶憋細</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ada">dpkg: error processing <span class="hljs-keyword">package</span> <span class="hljs-title">sunloginclient (鈥搃nstall): dependency</span><br>problems - leaving unconfigured<br></code></pre></td></tr></table></figure>
+
+<p>鍏堢敤</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">apt-<span class="hljs-built_in">get</span> -f -y install<br></code></pre></td></tr></table></figure>
+
+<p>瑙ｅ喅璺緞渚濊禆</p>
+<p>鐒跺悗閲嶆柊dpkg</p>
+<blockquote>
+<p>娉細瀹夎瀹岄粯璁ゅ湪 &#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;jdk 鐩綍涓?</p>
+</blockquote>
+<ul>
+<li><strong>3</strong>灏?jdk 绉昏嚦 &#x2F;opt 鐩綍涓?</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">mv <span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/jvm/</span>jdk-<span class="hljs-number">17</span> <span class="hljs-regexp">/opt/</span>jdk-<span class="hljs-number">17</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>4</strong>銆佸皢 jdk 鍔犲叆鐜鍙橀噺閰嶇疆鏂囦欢涓?</p>
+<p>鎵撳紑閰嶇疆鏂囦欢</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim ~/.zshrc<br></code></pre></td></tr></table></figure>
+
+<p>鍦ㄩ厤缃枃浠朵腑鍔犲叆濡備笅鍐呭</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-comment">#install JAVA JDK</span><br><span class="hljs-built_in">export</span> <span class="hljs-attribute">JAVA_HOME</span>=/opt/jdk-17<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">CLASSPATH</span>=.:$&#123;JAVA_HOME&#125;/lib<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">PATH</span>=<span class="hljs-variable">$&#123;JAVA_HOME&#125;</span>/bin:$PATH<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>鍦╲im涓紝鐢ㄥぇ鍐橧鎵撳紑鎻掑叆妯″紡锛岀敤<code>shift 鍔?ctrl 鍔?v</code>澶嶅埗锛岄殢鍚庤緭鍏锛歸q&#96;鍥炶溅淇濆瓨骞堕€€鍑?</p>
+</blockquote>
+<p><strong>5</strong>銆佷娇鍙樻洿鐢熸晥</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.zshrc<br></code></pre></td></tr></table></figure>
+
+<p><strong>6</strong>銆佸皢 jdk 17 鍔犲叆 jdk 鑿滃崟</p>
+<blockquote>
+<p><strong>渚濇</strong>鎵ц涓嬪垪浠ｇ爜</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">update-alternatives --install /usr/bin/java java /opt/jdk-7/bin/java 1<br>update-alternatives --install /usr/bin/javac javac /opt/jdk-7/bin/javac 1<br>update-alternatives --<span class="hljs-built_in">set</span> java /opt/jdk-7/bin/java<br>update-alternatives --<span class="hljs-built_in">set</span> javac /opt/jdk-7/bin/javac<br></code></pre></td></tr></table></figure>
+
+<h3 id="鍙樻洿-JDK-鐗堟湰"><a href="#鍙樻洿-JDK-鐗堟湰" class="headerlink" title="鍙樻洿 JDK 鐗堟湰"></a>鍙樻洿 JDK 鐗堟湰</h3><p>1銆佹洿鎹㈤粯璁ょ増鏈?</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">update</span><span class="hljs-operator">-</span>alternatives <span class="hljs-comment">--config java</span><br></code></pre></td></tr></table></figure>
+
+<p>鎴戞湁 4 涓€欓€夐」鍙敤浜庢浛鎹?java (鎻愪緵 &#x2F;usr&#x2F;bin&#x2F;java)銆?</p>
+<p>閫夋嫨鑷繁闇€瑕佺殑鐗堟湰鍗冲彲</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs awk">閫夋嫨       璺緞                                          浼樺厛绾? 鐘舵€?<br>---------------------------------------------------------------------<br><br><span class="hljs-number">0</span>            <span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/jvm/</span>java-<span class="hljs-number">11</span>-openjdk-amd64<span class="hljs-regexp">/bin/</span>java      <span class="hljs-number">1111</span>      鑷姩妯″紡<br><span class="hljs-number">1</span>            <span class="hljs-regexp">/opt/</span>jdk1.<span class="hljs-number">6.0</span>_45<span class="hljs-regexp">/bin/</span>java                        <span class="hljs-number">300</span>       鎵嬪姩妯″紡<br>* <span class="hljs-number">2</span>            <span class="hljs-regexp">/opt/</span>jdk1.<span class="hljs-number">8.0</span>_241<span class="hljs-regexp">/bin/</span>java                       <span class="hljs-number">300</span>       鎵嬪姩妯″紡<br>  <span class="hljs-number">3</span>            <span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/jvm/</span>java-<span class="hljs-number">11</span>-openjdk-amd64<span class="hljs-regexp">/bin/</span>java      <span class="hljs-number">1111</span>      鎵嬪姩妯″紡<br>  <span class="hljs-number">4</span>            <span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/jvm/</span>java-<span class="hljs-number">8</span>-openjdk-amd64<span class="hljs-regexp">/jre/</span>bin/java   <span class="hljs-number">1081</span>      鎵嬪姩妯″紡<br><br>瑕佺淮鎸佸綋鍓嶅€糩*]璇锋寜&lt;鍥炶溅閿?锛屾垨鑰呴敭鍏ラ€夋嫨鐨勭紪鍙凤細<br></code></pre></td></tr></table></figure>
+
+<p>鎷夸笅銆?</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>鍦↙inux涓崌绾ava</div>
+      <div>https://bainianlaoyao.github.io/2022/07/29/typecho-recovered-3-在Linux中升级Java/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>百年老妖</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年7月29日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/30/typecho-recovered-9-git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="git瀛︿範绗旇">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">git瀛︿範绗旇</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/15/typecho-recovered-12-excel-translate/" title="用Excel批量翻译单词">
+                        <span class="hidden-mobile">用Excel批量翻译单词</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
