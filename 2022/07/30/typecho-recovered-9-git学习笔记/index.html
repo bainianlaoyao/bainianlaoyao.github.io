@@ -19,12 +19,12 @@
   <meta name="author" content="百年老妖">
   <meta name="keywords" content="NAS搭建,个人NAS,私有云,家庭服务器,Docker,Linux,自动化追番,qbittorrent,ANI-RSS,AutoBangumi,番剧,动漫,百年老妖">
   
-    <meta name="description" content="骞村皯涓嶇煡git濂斤紝閿欐妸鍒涘缓鍓湰褰撴垚瀹?  鍦ㄥ浼歡it涔嬪墠锛屽氨涔呴椈GitHub澶у悕锛屼篃鏃朵笉鏃朵笂鍘讳笅涓€浜涘ソ鐢ㄧ殑椤圭洰锛屽彲鏄敱浜庢垜涓嶄細git锛屽缁堝彧鏄釜鍙細涓嬭浇鍘嬬缉鍖呯殑姗樺浜恒€? 褰撴椂鐨勬垜鑷劧涔熶笉鐭ラ亾git鍒板簳濂藉湪鍝噷锛岀増鏈帶鍒跺埌搴曟湁浠€涔堝濡欙紝涓嶈繃鍦ㄥ浼歡it浠ュ悗鎴戞亶鐒跺ぇ鎮燂紝瀹炲湪鏂逛究锛屽疄鍦">
+    <meta name="description" content="年少不知git好，错把创建副本当成宝  在学会git之前，就久闻GitHub大名，也时不时上去下一些好用的项目，可是由于我不会git，始终只是个只会下载压缩包的橘外人。 当时的我自然也不知道git到底好在哪里，版本控制到底有什么奇妙，不过在学会git以后我恍然大悟，实在方便，实在好用啊，如此霸，如此劲的软件此时不学何时学！  闲话少说，开始整理常用代码。 在git中，有本地的工作区，暂存区，本地">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git瀛︿範绗旇">
+<meta property="og:title" content="git学习笔记">
 <meta property="og:url" content="https://bainianlaoyao.github.io/2022/07/30/typecho-recovered-9-git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="百年老妖">
-<meta property="og:description" content="骞村皯涓嶇煡git濂斤紝閿欐妸鍒涘缓鍓湰褰撴垚瀹?  鍦ㄥ浼歡it涔嬪墠锛屽氨涔呴椈GitHub澶у悕锛屼篃鏃朵笉鏃朵笂鍘讳笅涓€浜涘ソ鐢ㄧ殑椤圭洰锛屽彲鏄敱浜庢垜涓嶄細git锛屽缁堝彧鏄釜鍙細涓嬭浇鍘嬬缉鍖呯殑姗樺浜恒€? 褰撴椂鐨勬垜鑷劧涔熶笉鐭ラ亾git鍒板簳濂藉湪鍝噷锛岀増鏈帶鍒跺埌搴曟湁浠€涔堝濡欙紝涓嶈繃鍦ㄥ浼歡it浠ュ悗鎴戞亶鐒跺ぇ鎮燂紝瀹炲湪鏂逛究锛屽疄鍦">
+<meta property="og:description" content="年少不知git好，错把创建副本当成宝  在学会git之前，就久闻GitHub大名，也时不时上去下一些好用的项目，可是由于我不会git，始终只是个只会下载压缩包的橘外人。 当时的我自然也不知道git到底好在哪里，版本控制到底有什么奇妙，不过在学会git以后我恍然大悟，实在方便，实在好用啊，如此霸，如此劲的软件此时不学何时学！  闲话少说，开始整理常用代码。 在git中，有本地的工作区，暂存区，本地">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://centuryoldgoblin.xyz/usr/uploads/2022/07/268042717.png">
 <meta property="og:image" content="http://centuryoldgoblin.xyz/usr/uploads/2022/07/1381952816.png">
@@ -36,6 +36,7 @@
 <meta property="og:image" content="http://centuryoldgoblin.xyz/usr/uploads/2022/07/4285190370.png">
 <meta property="og:image" content="http://centuryoldgoblin.xyz/usr/uploads/2022/07/4274482078.png">
 <meta property="og:image" content="http://centuryoldgoblin.xyz/usr/uploads/2022/07/3665208243.png">
+<meta property="og:image" content="http://centuryoldgoblin.xyz/usr/uploads/2022/07/2764838654.png">
 <meta property="article:published_time" content="2022-07-30T06:21:00.000Z">
 <meta property="article:modified_time" content="2023-08-22T04:39:41.000Z">
 <meta property="article:author" content="百年老妖">
@@ -57,7 +58,7 @@
   
   
   
-  <title>git瀛︿範绗旇 :) 百年老妖</title>
+  <title>git学习笔记 :) 百年老妖</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -263,7 +264,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="git瀛︿範绗旇"></span>
+            <span id="subtitle" data-typed-text="git学习笔记"></span>
           
         </div>
 
@@ -286,7 +287,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          1k 字
         
       </span>
     
@@ -297,7 +298,7 @@
         
         
         
-          13 分钟
+          9 分钟
         
       </span>
     
@@ -343,7 +344,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">git瀛︿範绗旇</h1>
+            <h1 id="seo-header">git学习笔记</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
@@ -357,77 +358,77 @@
               <div class="markdown-body">
                 
                 <blockquote>
-<p>骞村皯涓嶇煡git濂斤紝閿欐妸鍒涘缓鍓湰褰撴垚瀹?</p>
+<p>年少不知git好，错把创建副本当成宝</p>
 </blockquote>
-<p>鍦ㄥ浼歡it涔嬪墠锛屽氨涔呴椈GitHub澶у悕锛屼篃鏃朵笉鏃朵笂鍘讳笅涓€浜涘ソ鐢ㄧ殑椤圭洰锛屽彲鏄敱浜庢垜涓嶄細git锛屽缁堝彧鏄釜鍙細涓嬭浇鍘嬬缉鍖呯殑姗樺浜恒€?</p>
-<p>褰撴椂鐨勬垜鑷劧涔熶笉鐭ラ亾git鍒板簳濂藉湪鍝噷锛岀増鏈帶鍒跺埌搴曟湁浠€涔堝濡欙紝涓嶈繃鍦ㄥ浼歡it浠ュ悗鎴戞亶鐒跺ぇ鎮燂紝瀹炲湪鏂逛究锛屽疄鍦ㄥソ鐢ㄥ晩锛屽姝ら湼锛屽姝ゅ姴鐨勮蒋浠舵鏃朵笉瀛︿綍鏃跺锛?</p>
+<p>在学会git之前，就久闻GitHub大名，也时不时上去下一些好用的项目，可是由于我不会git，始终只是个只会下载压缩包的橘外人。</p>
+<p>当时的我自然也不知道git到底好在哪里，版本控制到底有什么奇妙，不过在学会git以后我恍然大悟，实在方便，实在好用啊，如此霸，如此劲的软件此时不学何时学！</p>
 <hr>
-<p>闂茶瘽灏戣锛屽紑濮嬫暣鐞嗗父鐢ㄤ唬鐮併€?</p>
-<p>鍦╣it涓紝鏈夋湰鍦扮殑宸ヤ綔鍖猴紝鏆傚瓨鍖猴紝鏈湴瀛樺偍搴擄紝鍜岃繙绋嬬殑杩滅▼瀛樺偍搴撱€?</p>
-<p>棣栧厛瑕佸湪鏂囦欢澶瑰垱寤烘湰鍦扮増鏈簱銆?</p>
-<p>鍦ㄦ枃浠跺す鐩綍鎵ц浠ヤ笅鎸囦护鏉ュ垱寤?git鏂囦欢澶癸紝涔熷氨鏄垱寤烘湰鍦扮増鏈簱銆?</p>
+<p>闲话少说，开始整理常用代码。</p>
+<p>在git中，有本地的工作区，暂存区，本地存储库，和远程的远程存储库。</p>
+<p>首先要在文件夹创建本地版本库。</p>
+<p>在文件夹目录执行以下指令来创建.git文件夹，也就是创建本地版本库。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git <span class="hljs-keyword">init</span><br></code></pre></td></tr></table></figure>
 
-<p>褰撳湪git涓璫ommit鏃跺繀椤昏缃敤鎴峰悕鍜岄偖绠憋細</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs 鈥?">git config --global user.name &quot;鐧惧勾鑰佸&quot;<br>git config --global user.email &quot;鐧惧勾鑰佸@qq.com&quot;<br></code></pre></td></tr></table></figure>
+<p>当在git中commit时必须设置用户名和邮箱：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ‘">git config --global user.name &quot;百年老妖&quot;<br>git config --global user.email &quot;百年老妖@qq.com&quot;<br></code></pre></td></tr></table></figure>
 
-<p>鏇存敼淇濆瓨鐨勬墍鏈夋枃浠堕兘浼氬湪宸ヤ綔鍖轰腑锛屽綋鏂版枃浠惰鍒涘缓锛屾柊鏂囦欢浼氬浜巙ntracked鐘舵€併€傞€氳繃<code>git add</code>鎸囦护灏嗘枃浠舵坊鍔犲埌鏆傚瓨鍖篳锛?</p>
+<p>更改保存的所有文件都会在工作区中，当新文件被创建，新文件会处于untracked状态。通过<code>git add</code>指令将文件添加到暂存区&#96;：</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">git <span class="hljs-built_in">add</span> filename<br></code></pre></td></tr></table></figure>
 
-<p>褰撴枃浠惰娣诲姞鍒版殏瀛樺尯鍚庯紝鏂囦欢灏辫git鏍囪涓簍racked鐘舵€併€?</p>
-<p>浣跨敤<code>git status</code>鏉ユ煡鐪嬫槸鍚︽湁鏂囦欢鏈杩借釜锛?</p>
+<p>当文件被添加到暂存区后，文件就被git标记为tracked状态。</p>
+<p>使用<code>git status</code>来查看是否有文件未被追踪：</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git status</span><br></code></pre></td></tr></table></figure>
 
-<p>鍦ㄦ殏瀛樺尯鐨勬枃浠跺彲浠ヨ鎻愪氦鍒版湰鍦扮増鏈簱锛屼娇鐢╜commit&#96;鎸囦护锛?</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">git</span> commit -m <span class="hljs-string">&#x27;鎻愪氦淇℃伅&#x27;</span><br></code></pre></td></tr></table></figure>
+<p>在暂存区的文件可以被提交到本地版本库，使用<code>commit</code>指令：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">git</span> commit -m <span class="hljs-string">&#x27;提交信息&#x27;</span><br></code></pre></td></tr></table></figure>
 
-<p><code>commit</code>瑕佹眰闄勫甫鎻愪氦淇℃伅锛岃繖鏄繀瑕佺殑锛岄渶瑕佹竻妤氭弿杩拌繖娆ommit鍙戠敓鐨勫彉鍖栵紝浠ヤ究鏃ュ悗鍥炴函鐗堟湰鏃惰娓呰嚜宸卞簲璇ュ洖婧殑鐗堟湰銆?</p>
-<p>涓€鑸潵璇达紝瀵归」鐩姛鑳界殑璋冩暣搴旇鍦ㄥ垎鏀腑鏇存敼娴嬭瘯锛屾洿涓哄畨鍏紝棣栧厛闇€瑕佸垱寤哄垎鏀細</p>
+<p><code>commit</code>要求附带提交信息，这是必要的，需要清楚描述这次commit发生的变化，以便日后回溯版本时认清自己应该回溯的版本。</p>
+<p>一般来说，对项目功能的调整应该在分支中更改测试，更为安全，首先需要创建分支：</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git branch branch_name</span><br></code></pre></td></tr></table></figure>
 
-<p>瑕佹敞鎰忕殑鏄垱寤哄垎鏀悗git涓嶄細鑷姩寮€濮嬪湪鏂板垎鏀洿鏀癸紝闇€瑕佸垏鎹㈠垎鏀細</p>
+<p>要注意的是创建分支后git不会自动开始在新分支更改，需要切换分支：</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git checkout branch_name</span><br></code></pre></td></tr></table></figure>
 
-<p>鍙互鐢細</p>
+<p>可以用：</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">git branch</span><br></code></pre></td></tr></table></figure>
 
-<p>鏉ョ‘瀹氬垎鏀悕瀛楀拰鏁伴噺銆?</p>
-<p>褰撲竴椤挎搷浣滅寷濡傝檸鍚庯紝鎴戜滑浼氭兂瑕佸皢鍒嗘敮鍚堝苟鍒颁富鍒嗘敮涓婏紝杩欐椂闇€瑕佸厛鍒囨崲鍒颁富鍒嗘敮锛?</p>
+<p>来确定分支名字和数量。</p>
+<p>当一顿操作猛如虎后，我们会想要将分支合并到主分支上，这时需要先切换到主分支：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">git checkout <span class="hljs-selector-tag">main</span><br></code></pre></td></tr></table></figure>
 
-<p>鐒跺悗鐢╜git merge&#96;鏉ュ悎骞跺垎鏀?</p>
+<p>然后用<code>git merge</code>来合并分支</p>
 <figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cos">git <span class="hljs-keyword">merge</span> branch_name<br></code></pre></td></tr></table></figure>
 
-<p>涓€鑸殑锛実it浼氳嚜鍔ㄥ仛濂藉悎骞讹紝浣嗘湁鏃跺€欎唬鐮佹敼鍔ㄥお澶э紝git浼氬湪鏂囦欢閲屽仛濂芥爣娉紝闇€瑕佺敤鎴疯嚜琛屾洿鏀癸紝鐒跺悗閲嶆柊commit銆?</p>
-<p>褰撴垜浠兂瑕佸洖婧増鏈椂锛屽厛鐢細</p>
+<p>一般的，git会自动做好合并，但有时候代码改动太大，git会在文件里做好标注，需要用户自行更改，然后重新commit。</p>
+<p>当我们想要回溯版本时，先用：</p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">git <span class="hljs-built_in">log</span><br></code></pre></td></tr></table></figure>
 
-<p>鏉ユ煡鐪嬪巻鍙茬増鏈?<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/268042717.png" srcset="/img/loading.gif" lazyload alt="git log杩斿洖缁撴灉"></p>
-<p>鍙互鐪嬪埌锛屾垜鐜板湪姝ｅ浜庘€?鈥樼殑鐗堟湰锛岃繖鏄垜txt鐨勬枃浠讹細<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/1381952816.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>濡傛灉鎴戞兂瑕佸洖鍒扳€?鈥欑殑鐗堟湰锛屽氨闇€瑕佸鍒禼ommit 鍚庨潰鐨勪竴闀夸覆缂栫爜锛岀劧鍚庝娇鐢╜reset&#96;鍛戒护</p>
+<p>来查看历史版本<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/268042717.png" srcset="/img/loading.gif" lazyload alt="git log返回结果"></p>
+<p>可以看到，我现在正处于’2‘的版本，这是我txt的文件：<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/1381952816.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>如果我想要回到‘1’的版本，就需要复制commit 后面的一长串编码，然后使用<code>reset</code>命令</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard your_numebr</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/132286518.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>褰撴垜鎵ц<code>reset</code>鍛戒护鍚庯紝灏卞洖閫€鍒颁簡鐗堟湰1锛岃繖鏃跺啀鐪媡xt鏂囦欢锛?<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/3263390438.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>闈炲父鐨刟mazing銆?</p>
-<h2 id="杩滅▼浠撳簱"><a href="#杩滅▼浠撳簱" class="headerlink" title="杩滅▼浠撳簱"></a>杩滅▼浠撳簱</h2><p>github鏄ぇ鍚嶉紟榧庣殑杩滅▼浠ｇ爜鎵樼搴擄紝鍦╣ithub涓殑鎵€鏈夊簱閮借兘鐢ㄤ竴鏉℃寚浠や笅杞姐€?<br>棣栧厛锛岄渶瑕佽幏鍙朑itHub浠撳簱閾炬帴锛屼妇涓牀瀛愶紝鎴戠幇鍦ㄥGitHub鐨勪竴涓嚜鍔ㄧ敓鎴?14513绠楀紡鐨勭▼搴忓緢鎰熷叴瓒ｃ€?<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/1268608372.png" srcset="/img/loading.gif" lazyload alt="114514鐢熸垚"><br>鐐瑰嚮code鍚庡鍒堕摼鎺ャ€傘€?<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/3985230187.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>闅忓悗浣跨敤<code>git clone</code>鎸囦护鍏嬮殕搴撱€?</p>
+<p><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/132286518.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>当我执行<code>reset</code>命令后，就回退到了版本1，这时再看txt文件：<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/3263390438.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>非常的amazing。</p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><p>github是大名鼎鼎的远程代码托管库，在github中的所有库都能用一条指令下载。<br>首先，需要获取GitHub仓库链接，举个栗子，我现在对GitHub的一个自动生成114513算式的程序很感兴趣。<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/1268608372.png" srcset="/img/loading.gif" lazyload alt="114514生成"><br>点击code后复制链接。。<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/3985230187.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>随后使用<code>git clone</code>指令克隆库。</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/CentruryOldGoblin/<span class="hljs-number">114514</span>-equation-creater.git<br></code></pre></td></tr></table></figure>
 
 <p><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/1454603989.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>鍏嬮殕鍚庝細鍦ㄦ墍鍦ㄧ洰褰曡嚜鍔ㄦ柊寤轰竴涓枃浠跺す瀛樺偍椤圭洰銆?</p>
+<p>克隆后会在所在目录自动新建一个文件夹存储项目。</p>
 <hr>
-<p>浜庢槸鎴戝氨鎶婅繙绋嬩粨搴揷lone涓嬫潵浜嗭紝鐒跺悗鎴戜滑鍙互瀵瑰畠鍋氫竴浜涗笉鍙〃杩扮殑浜嬶紝姣斿鍔犱竴琛屾敞閲娿€?<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/4285190370.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>闅忓悗鐢細</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">git commit -<span class="hljs-keyword">a</span> -m <span class="hljs-string">&#x27;add 娉ㄩ噴&#x27;</span><br></code></pre></td></tr></table></figure>
+<p>于是我就把远程仓库clone下来了，然后我们可以对它做一些不可表述的事，比如加一行注释。<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/4285190370.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>随后用：</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">git commit -<span class="hljs-keyword">a</span> -m <span class="hljs-string">&#x27;add 注释&#x27;</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/4274482078.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
-<p>鏉ユ彁浜ゅ埌鏈湴瀛樺偍搴撱€?<br>commit涓殑<code>-a</code>浼氳嚜鍔ㄦ墽琛宎dd鍛戒护銆?</p>
+<p>来提交到本地存储库。<br>commit中的<code>-a</code>会自动执行add命令。</p>
 <hr>
-<p>鎺ヤ笅鏉ュ氨鏄璇佸杩圭殑鏃跺埢锛岃鎴戠敤<code>push</code>鎸囦护鏉ユ妸浠栨彁浜ゅ埌杩滅▼瀛樺偍搴撱€?</p>
+<p>接下来就是见证奇迹的时刻，让我用<code>push</code>指令来把他提交到远程存储库。</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">git <span class="hljs-built_in">push</span> --force <span class="hljs-built_in">origin</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/3665208243.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>瑙ｉ噴涓€涓嬫寚浠ゅ惂锛宍–force&#96;鎰忓懗杩欏己鍒舵帹閫侊紝origin 鎸囦唬浣犲厠闅嗙殑鍘熷簱鐨勫湴鍧€銆?<br>鍦ㄦ彁浜ゆ椂杩橀渶杩涜韬唤楠岃瘉锛屾彁浜ゆ垚鍔熷悗涓€鑸潵璇撮渶瑕佷粨搴撴嫢鏈夎€呭悓鎰忛噰绾充綘鐨勬彁浜ゆ垨鑰呬笉閲囩撼锛屼絾鐢变簬鎴戠敤鐨勬椂鑷繁鐨勪粨搴撴墍浠ョ洿鎺ユ洿鏀硅繙绋嬬増鏈簱浜?</p>
+<p><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/3665208243.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>解释一下指令吧，<code>--force</code>意味这强制推送，origin 指代你克隆的原库的地址。<br>在提交时还需进行身份验证，提交成功后一般来说需要仓库拥有者同意采纳你的提交或者不采纳，但由于我用的时自己的仓库所以直接更改远程版本库了</p>
 <hr>
-<p>鎺ヤ笅鏉ヨ鎴戜滑鐪嬬湅杩滅▼搴撱€?<a target="_blank" rel="noopener" href="http://centuryoldgoblin.xyz/usr/uploads/2022/07/2764838654.png">image.png</a></p>
-<p>缁撴灉闈炲父鐨刟mazing鍟婏紒杩滅▼鐗堟湰搴撶殑鍐呭灏辫繖鏍疯鏇存敼浜嗐€?</p>
+<p>接下来让我们看看远程库。<img src="http://centuryoldgoblin.xyz/usr/uploads/2022/07/2764838654.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>结果非常的amazing啊！远程版本库的内容就这样被更改了。</p>
 
                 
               </div>
@@ -445,7 +446,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>git瀛︿範绗旇</div>
+      <div>git学习笔记</div>
       <div>https://bainianlaoyao.github.io/2022/07/30/typecho-recovered-9-git学习笔记/</div>
     </div>
     <div class="license-meta">
@@ -490,9 +491,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/16/typecho-recovered-40-%E6%A0%91%E8%8E%93%E6%B4%BE%E6%B5%81%E7%95%85%E6%92%AD%E6%94%BEbilibili1080p%E8%A7%86%E9%A2%91/" title="鏍戣帗娲炬祦鐣呮挱鏀?bilibili1080p 瑙嗛">
+                      <a href="/2022/08/16/typecho-recovered-40-%E6%A0%91%E8%8E%93%E6%B4%BE%E6%B5%81%E7%95%85%E6%92%AD%E6%94%BEbilibili1080p%E8%A7%86%E9%A2%91/" title="树莓派流畅播放 bilibili1080p 视频">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">鏍戣帗娲炬祦鐣呮挱鏀?bilibili1080p 瑙嗛</span>
+                        <span class="hidden-mobile">树莓派流畅播放 bilibili1080p 视频</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -500,8 +501,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/29/typecho-recovered-3-%E5%9C%A8Linux%E4%B8%AD%E5%8D%87%E7%BA%A7Java/" title="鍦↙inux涓崌绾ava">
-                        <span class="hidden-mobile">鍦↙inux涓崌绾ava</span>
+                      <a href="/2022/07/29/typecho-recovered-3-%E5%9C%A8Linux%E4%B8%AD%E5%8D%87%E7%BA%A7Java/" title="在Linux中升级Java">
+                        <span class="hidden-mobile">在Linux中升级Java</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

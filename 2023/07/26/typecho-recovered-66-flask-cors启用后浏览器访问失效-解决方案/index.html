@@ -19,12 +19,12 @@
   <meta name="author" content="百年老妖">
   <meta name="keywords" content="NAS搭建,个人NAS,私有云,家庭服务器,Docker,Linux,自动化追番,qbittorrent,ANI-RSS,AutoBangumi,番剧,动漫,百年老妖">
   
-    <meta name="description" content="闂鍒嗘瀽鍘焒lask绔唬鐮? 12345678from flask import Flask, requestfrom flask_cors import CORSapp &#x3D; Flask(__name__)CORS(app)@app.route(&#x27;&#x2F;execute&#x27;, methods&#x3D;[&#x27;POST&#x27;])def execute_code():	#logi">
+    <meta name="description" content="问题分析原flask端代码: 12345678from flask import Flask, requestfrom flask_cors import CORSapp &#x3D; Flask(__name__)CORS(app)@app.route(&#x27;&#x2F;execute&#x27;, methods&#x3D;[&#x27;POST&#x27;])def execute_code():	#logic">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flask_cors鍚敤鍚庢祻瑙堝櫒璁块棶澶辨晥 瑙ｅ喅鏂规">
+<meta property="og:title" content="flask_cors启用后浏览器访问失效 解决方案">
 <meta property="og:url" content="https://bainianlaoyao.github.io/2023/07/26/typecho-recovered-66-flask-cors%E5%90%AF%E7%94%A8%E5%90%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AE%E5%A4%B1%E6%95%88-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
 <meta property="og:site_name" content="百年老妖">
-<meta property="og:description" content="闂鍒嗘瀽鍘焒lask绔唬鐮? 12345678from flask import Flask, requestfrom flask_cors import CORSapp &#x3D; Flask(__name__)CORS(app)@app.route(&#x27;&#x2F;execute&#x27;, methods&#x3D;[&#x27;POST&#x27;])def execute_code():	#logi">
+<meta property="og:description" content="问题分析原flask端代码: 12345678from flask import Flask, requestfrom flask_cors import CORSapp &#x3D; Flask(__name__)CORS(app)@app.route(&#x27;&#x2F;execute&#x27;, methods&#x3D;[&#x27;POST&#x27;])def execute_code():	#logic">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://centuryoldgoblin.xyz/usr/uploads/2023/07/4064342045.png">
 <meta property="og:image" content="https://centuryoldgoblin.xyz/usr/uploads/2023/07/1514033420.png">
@@ -49,7 +49,7 @@
   
   
   
-  <title>flask_cors鍚敤鍚庢祻瑙堝櫒璁块棶澶辨晥 瑙ｅ喅鏂规 :) 百年老妖</title>
+  <title>flask_cors启用后浏览器访问失效 解决方案 :) 百年老妖</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -255,7 +255,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="flask_cors鍚敤鍚庢祻瑙堝櫒璁块棶澶辨晥 瑙ｅ喅鏂规"></span>
+            <span id="subtitle" data-typed-text="flask_cors启用后浏览器访问失效 解决方案"></span>
           
         </div>
 
@@ -278,7 +278,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          221 字
+          186 字
         
       </span>
     
@@ -335,7 +335,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">flask_cors鍚敤鍚庢祻瑙堝櫒璁块棶澶辨晥 瑙ｅ喅鏂规</h1>
+            <h1 id="seo-header">flask_cors启用后浏览器访问失效 解决方案</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
@@ -348,14 +348,14 @@
             
               <div class="markdown-body">
                 
-                <h2 id="闂鍒嗘瀽"><a href="#闂鍒嗘瀽" class="headerlink" title="闂鍒嗘瀽"></a>闂鍒嗘瀽</h2><p>鍘焒lask绔唬鐮?</p>
+                <h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>原flask端代码:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask, request<br><span class="hljs-keyword">from</span> flask_cors <span class="hljs-keyword">import</span> CORS<br>app = Flask(__name__)<br>CORS(app)<br><br><span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">&#x27;/execute&#x27;</span>, methods=[<span class="hljs-string">&#x27;POST&#x27;</span>]</span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">execute_code</span>():<br>	<span class="hljs-comment">#logic</span><br></code></pre></td></tr></table></figure>
 
-<p>鍦ㄤ娇鐢╬ython request搴撹闂湇鍔℃椂, 涓€鍒囪〃鐜拌壇濂? 浣嗘槸濡傛灉浣跨敤娴忚鍣ㄨ闂? 浼氬彂鐜板嚭鐜伴敊璇?<br><img src="https://centuryoldgoblin.xyz/usr/uploads/2023/07/4064342045.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>娴忚鍣ㄤ細鍦ㄧ湡姝ｈ闂法鍩熻祫婧愭椂浜嬪厛鍙戦€佷竴涓猵reflight璇锋眰, 鑰宖lask骞朵笉浼氬鐞嗚繖涓姹? 瀵艰嚧404.(褰撲綘宸茬粡浣跨敤flask_cors鏃? 鎴戦粯璁や綘宸茬粡浜嗚ВCORS)</p>
-<h2 id="瑙e喅鏂规"><a href="#瑙e喅鏂规" class="headerlink" title="瑙ｅ喅鏂规"></a>瑙ｅ喅鏂规</h2><p>褰撴垜浠煡鐪媝reflight璇锋眰:<br><img src="https://centuryoldgoblin.xyz/usr/uploads/2023/07/1514033420.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>浠栦娇鐢╫ption鏂规硶璇锋眰, 鍥犳, 鎴戜滑浣跨敤瀵瑰簲閫昏緫澶勭悊瀹?</p>
+<p>在使用python request库访问服务时, 一切表现良好, 但是如果使用浏览器访问, 会发现出现错误:<br><img src="https://centuryoldgoblin.xyz/usr/uploads/2023/07/4064342045.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>浏览器会在真正访问跨域资源时事先发送一个preflight请求, 而flask并不会处理这个请求, 导致404.(当你已经使用flask_cors时, 我默认你已经了解CORS)</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>当我们查看preflight请求:<br><img src="https://centuryoldgoblin.xyz/usr/uploads/2023/07/1514033420.png" srcset="/img/loading.gif" lazyload alt="image.png"><br>他使用option方法请求, 因此, 我们使用对应逻辑处理它:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask, request, Response<br><span class="hljs-keyword">from</span> flask_cors <span class="hljs-keyword">import</span> CORS<br>app = Flask(__name__)<br>CORS(app)<br><span class="hljs-meta">@app.before_request</span><br><span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">&#x27;/execute&#x27;</span>, methods=[<span class="hljs-string">&#x27;POST&#x27;</span>]</span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">execute_code</span>():<br>	<span class="hljs-keyword">if</span> request.method.lower() == <span class="hljs-string">&#x27;options&#x27;</span>:<br>        <span class="hljs-keyword">return</span> Response()<br>	<span class="hljs-comment">#logic</span><br></code></pre></td></tr></table></figure>
 
-<p>鍏充簬鎶€鏈粏鑺? 浣犲彲浠ユ煡鐪?<br><a target="_blank" rel="noopener" href="https://flask.palletsprojects.com/en/2.3.x/api/#flask.Flask.before_request">@app.before_request</a></p>
+<p>关于技术细节, 你可以查看:<br><a target="_blank" rel="noopener" href="https://flask.palletsprojects.com/en/2.3.x/api/#flask.Flask.before_request">@app.before_request</a></p>
 
                 
               </div>
@@ -373,7 +373,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>flask_cors鍚敤鍚庢祻瑙堝櫒璁块棶澶辨晥 瑙ｅ喅鏂规</div>
+      <div>flask_cors启用后浏览器访问失效 解决方案</div>
       <div>https://bainianlaoyao.github.io/2023/07/26/typecho-recovered-66-flask-cors启用后浏览器访问失效-解决方案/</div>
     </div>
     <div class="license-meta">
@@ -418,9 +418,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/22/typecho-recovered-67-nginx-502%E9%94%99%E8%AF%AF-fastcgi%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="nginx 502閿欒 fastcgi杩炴帴澶辫触瑙ｅ喅鏂规">
+                      <a href="/2023/08/22/typecho-recovered-67-nginx-502%E9%94%99%E8%AF%AF-fastcgi%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="nginx 502错误 fastcgi连接失败解决方案">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">nginx 502閿欒 fastcgi杩炴帴澶辫触瑙ｅ喅鏂规</span>
+                        <span class="hidden-mobile">nginx 502错误 fastcgi连接失败解决方案</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

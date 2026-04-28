@@ -19,12 +19,12 @@
   <meta name="author" content="百年老妖">
   <meta name="keywords" content="NAS搭建,个人NAS,私有云,家庭服务器,Docker,Linux,自动化追番,qbittorrent,ANI-RSS,AutoBangumi,番剧,动漫,百年老妖">
   
-    <meta name="description" content="鏍戣帗娲?..yyds?  涓昏闂鍦ㄦ爲鑾撴淳绯荤粺鍐呯疆 chromium 娴忚鍣ㄦ挱鏀?bilibili1080p 瑙嗛鏃朵細鍑虹幇璁╀汉鏃犳硶鎺ュ彈鐨勫崱椤裤€?鐒惰€岃繖骞垮ぇ鐨勪簰鑱旂綉绔熸病鏈変竴绡囨暀绋嬬殑瀹硅韩涔嬪湴銆?浜庢槸缁忚繃鎴戜竴涓ゅぉ鐨勬姌纾ㄨВ鍐抽棶棰樺悗鎴戝喅瀹氳刀绱ц褰曚笅鏉ヤ互闃叉垜蹇樿銆? 閰嶇疆淇℃伅 鏍戣帗娲?4b   4GB鍐呭瓨 Rasp">
+    <meta name="description" content="树莓派…yyds?  主要问题在树莓派系统内置 chromium 浏览器播放 bilibili1080p 视频时会出现让人无法接受的卡顿。然而这广大的互联网竟没有一篇教程的容身之地。于是经过我一两天的折磨解决问题后我决定赶紧记录下来以防我忘记。 配置信息 树莓派 4b   4GB内存 Raspberry Pi OS（legacy）  解决方案实际上我也不知道我做的步骤中哪些有用哪些没用，但是可以">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鏍戣帗娲炬祦鐣呮挱鏀?bilibili1080p 瑙嗛">
+<meta property="og:title" content="树莓派流畅播放 bilibili1080p 视频">
 <meta property="og:url" content="https://bainianlaoyao.github.io/2022/08/16/typecho-recovered-40-%E6%A0%91%E8%8E%93%E6%B4%BE%E6%B5%81%E7%95%85%E6%92%AD%E6%94%BEbilibili1080p%E8%A7%86%E9%A2%91/index.html">
 <meta property="og:site_name" content="百年老妖">
-<meta property="og:description" content="鏍戣帗娲?..yyds?  涓昏闂鍦ㄦ爲鑾撴淳绯荤粺鍐呯疆 chromium 娴忚鍣ㄦ挱鏀?bilibili1080p 瑙嗛鏃朵細鍑虹幇璁╀汉鏃犳硶鎺ュ彈鐨勫崱椤裤€?鐒惰€岃繖骞垮ぇ鐨勪簰鑱旂綉绔熸病鏈変竴绡囨暀绋嬬殑瀹硅韩涔嬪湴銆?浜庢槸缁忚繃鎴戜竴涓ゅぉ鐨勬姌纾ㄨВ鍐抽棶棰樺悗鎴戝喅瀹氳刀绱ц褰曚笅鏉ヤ互闃叉垜蹇樿銆? 閰嶇疆淇℃伅 鏍戣帗娲?4b   4GB鍐呭瓨 Rasp">
+<meta property="og:description" content="树莓派…yyds?  主要问题在树莓派系统内置 chromium 浏览器播放 bilibili1080p 视频时会出现让人无法接受的卡顿。然而这广大的互联网竟没有一篇教程的容身之地。于是经过我一两天的折磨解决问题后我决定赶紧记录下来以防我忘记。 配置信息 树莓派 4b   4GB内存 Raspberry Pi OS（legacy）  解决方案实际上我也不知道我做的步骤中哪些有用哪些没用，但是可以">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://centuryoldgoblin.xyz/usr/uploads/2022/08/1573509477.png">
 <meta property="og:image" content="http://centuryoldgoblin.xyz/usr/uploads/2022/08/1700636558.png">
@@ -53,7 +53,7 @@
   
   
   
-  <title>鏍戣帗娲炬祦鐣呮挱鏀?bilibili1080p 瑙嗛 :) 百年老妖</title>
+  <title>树莓派流畅播放 bilibili1080p 视频 :) 百年老妖</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -259,7 +259,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="鏍戣帗娲炬祦鐣呮挱鏀?bilibili1080p 瑙嗛"></span>
+            <span id="subtitle" data-typed-text="树莓派流畅播放 bilibili1080p 视频"></span>
           
         </div>
 
@@ -282,7 +282,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          930 字
+          653 字
         
       </span>
     
@@ -293,7 +293,7 @@
         
         
         
-          8 分钟
+          6 分钟
         
       </span>
     
@@ -339,7 +339,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">鏍戣帗娲炬祦鐣呮挱鏀?bilibili1080p 瑙嗛</h1>
+            <h1 id="seo-header">树莓派流畅播放 bilibili1080p 视频</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
@@ -353,39 +353,39 @@
               <div class="markdown-body">
                 
                 <blockquote>
-<p>鏍戣帗娲?..yyds?</p>
+<p>树莓派…yyds?</p>
 </blockquote>
-<h2 id="涓昏闂"><a href="#涓昏闂" class="headerlink" title="涓昏闂"></a>涓昏闂</h2><p>鍦ㄦ爲鑾撴淳绯荤粺鍐呯疆 chromium 娴忚鍣ㄦ挱鏀?bilibili1080p 瑙嗛鏃朵細鍑虹幇璁╀汉鏃犳硶鎺ュ彈鐨勫崱椤裤€?<br>鐒惰€岃繖骞垮ぇ鐨勪簰鑱旂綉绔熸病鏈変竴绡囨暀绋嬬殑瀹硅韩涔嬪湴銆?<br>浜庢槸缁忚繃鎴戜竴涓ゅぉ鐨勬姌纾ㄨВ鍐抽棶棰樺悗鎴戝喅瀹氳刀绱ц褰曚笅鏉ヤ互闃叉垜蹇樿銆?</p>
-<h2 id="閰嶇疆淇℃伅"><a href="#閰嶇疆淇℃伅" class="headerlink" title="閰嶇疆淇℃伅"></a>閰嶇疆淇℃伅</h2><ul>
-<li>鏍戣帗娲?4b   4GB鍐呭瓨</li>
-<li>Raspberry Pi OS锛坙egacy锛?<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/08/1573509477.png" srcset="/img/loading.gif" lazyload alt="璁ゅ噯Buster"></li>
+<h2 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h2><p>在树莓派系统内置 chromium 浏览器播放 bilibili1080p 视频时会出现让人无法接受的卡顿。<br>然而这广大的互联网竟没有一篇教程的容身之地。<br>于是经过我一两天的折磨解决问题后我决定赶紧记录下来以防我忘记。</p>
+<h2 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h2><ul>
+<li>树莓派 4b   4GB内存</li>
+<li>Raspberry Pi OS（legacy）<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/08/1573509477.png" srcset="/img/loading.gif" lazyload alt="认准Buster"></li>
 </ul>
-<h2 id="瑙e喅鏂规"><a href="#瑙e喅鏂规" class="headerlink" title="瑙ｅ喅鏂规"></a>瑙ｅ喅鏂规</h2><p>瀹為檯涓婃垜涔熶笉鐭ラ亾鎴戝仛鐨勬楠や腑鍝簺鏈夌敤鍝簺娌＄敤锛屼絾鏄彲浠ョ‘瀹氱殑鏄叏閮ㄥ仛瀹岀櫨鍒嗙櫨鏈夌敤锛屾墍浠ヨ鎴戜滑鏀惧純涓€鐐规晥鐜囧惂銆?</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>实际上我也不知道我做的步骤中哪些有用哪些没用，但是可以确定的是全部做完百分百有用，所以让我们放弃一点效率吧。</p>
 <hr>
-<p>棣栧厛涓嬭浇 screenfetch</p>
+<p>首先下载 screenfetch</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs elixir">pi<span class="hljs-variable">@raspberrypi</span><span class="hljs-symbol">:~</span> <span class="hljs-variable">$ </span>sudo apt install screenfetch<br></code></pre></td></tr></table></figure>
 
-<p>杩愯</p>
+<p>运行</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs elixir">pi<span class="hljs-variable">@raspberrypi</span><span class="hljs-symbol">:~</span> <span class="hljs-variable">$ </span>screenfetch<br></code></pre></td></tr></table></figure>
 
-<p>浼氭樉绀轰互涓嬬晫闈?<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/08/1700636558.png" srcset="/img/loading.gif" lazyload alt="screenfetch"><br>妫€鏌ヤ竴涓嬬郴缁熼厤缃槸鍚︽纭€?</p>
+<p>会显示以下界面<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/08/1700636558.png" srcset="/img/loading.gif" lazyload alt="screenfetch"><br>检查一下系统配置是否正确。</p>
 <hr>
-<p>闅忓悗杩涘叆娴忚鍣紝鍦ㄥ湴鍧€鏍忎腑杈撳叆</p>
+<p>随后进入浏览器，在地址栏中输入</p>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">chrome:</span><span class="hljs-comment">//flags</span><br></code></pre></td></tr></table></figure>
 
-<p>闅忓悗鎼滅储<code>Hardware-accelerated video decode</code>锛屽苟灏嗙洰鏍囨敼涓篳enable&#96;<br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/08/566467188.png" srcset="/img/loading.gif" lazyload alt="濡傚浘"></p>
-<p>缁х画鎼滅储<code>#ignore-gpu-blocklist</code>锛屽悓鏍锋敼涓篳enabled&#96;</p>
-<p>閲嶅惎娴忚鍣ㄥ悗锛屽湪鍦板潃鏍忎腑杈撳叆锛?</p>
+<p>随后搜索<code>Hardware-accelerated video decode</code>，并将目标改为<code>enable</code><br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/08/566467188.png" srcset="/img/loading.gif" lazyload alt="如图"></p>
+<p>继续搜索<code>#ignore-gpu-blocklist</code>，同样改为<code>enabled</code></p>
+<p>重启浏览器后，在地址栏中输入：</p>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">chrome:</span><span class="hljs-comment">//gpu</span><br></code></pre></td></tr></table></figure>
 
-<p>浠ヤ笅鏄簲璇ユ樉绀虹殑鐣岄潰</p>
-<p><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/08/2193493613.png" srcset="/img/loading.gif" lazyload alt="鐣岄潰"></p>
-<p>杩欎箣鍚庯紝鎴戜滑灏卞彲浠ュ叴濂嬬殑鎵撳紑 bilibili锛岄殢鏈虹偣寮€涓€涓垢杩愯棰戯紝鐒跺悗鎯婂枩鐨勫彂鐜拌繕鏄崱鐨勮浜烘棤娉曟帴鍙椼€?</p>
-<p>杩欐槸鍥犱负杩樻病鏈夋洿鏀硅棰戠紪鐮併€?</p>
-<p><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/08/1141527778.png" srcset="/img/loading.gif" lazyload alt="鐐瑰嚮鏇村鎾斁璁剧疆"><br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/08/688483157.png" srcset="/img/loading.gif" lazyload alt="鏇存敼鎾斁璁剧疆涓篐EVC"></p>
-<p>灏界宸茬粡鍙互娴佺晠鎾斁锛屼絾鏄涪甯ф儏鍐典緷鐒舵棤娉曢伩鍏嶏紝鍙互閫氳繃<code>鍙抽敭</code>瑙嗛鎵撳紑<code>瑙嗛缁熻淇℃伅</code>锛屾潵鏌ョ湅涓熷抚鐜囷紝浠ヤ笅鏄垜鐨勬祴璇曘€?</p>
-<p>*<em>娴嬭瘯涓褰曟瘡2000甯т腑涓㈠け甯х殑鏁伴噺锛屾暟鍊艰秺灏忔挱鏀捐秺娴佺晠銆傝繛缁挱鏀?000甯?</em></p>
-<p>鍦?080p鐢昏川涓嬪叏灞忔挱鏀炬柊鐣€婄兢闈掑紑鍦哄彿銆?</p>
+<p>以下是应该显示的界面</p>
+<p><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/08/2193493613.png" srcset="/img/loading.gif" lazyload alt="界面"></p>
+<p>这之后，我们就可以兴奋的打开 bilibili，随机点开一个幸运视频，然后惊喜的发现还是卡的让人无法接受。</p>
+<p>这是因为还没有更改视频编码。</p>
+<p><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/08/1141527778.png" srcset="/img/loading.gif" lazyload alt="点击更多播放设置"><br><img src="http://centuryoldgoblin.xyz/usr/uploads/2022/08/688483157.png" srcset="/img/loading.gif" lazyload alt="更改播放设置为HEVC"></p>
+<p>尽管已经可以流畅播放，但是丢帧情况依然无法避免，可以通过<code>右键</code>视频打开<code>视频统计信息</code>，来查看丟帧率，以下是我的测试。</p>
+<p><strong>测试中记录每2000帧中丢失帧的数量，数值越小播放越流畅。连续播放8000帧</strong></p>
+<p>在1080p画质下全屏播放新番《群青开场号》</p>
 <table>
 <thead>
 <tr>
@@ -415,10 +415,38 @@
 <td>0</td>
 </tr>
 </tbody></table>
-<p>鍦?080p楂樼爜鐜囩敾璐ㄤ笅鍏ㄥ睆鎾斁鏂扮暘銆婄兢闈掑紑鍦哄彿銆?</p>
-<p>| AV1锛堟湁鐢婚潰鎾曡锛?|HEVC锛堟湁鐢婚潰鎾曡锛墊 AVC 锛堟湁鐢婚潰鎾曡锛墊<br>| — | — | — |<br>| 335 | 24 |  9|<br>|  308|  0|  0|<br>| 23|     0|  0|<br>| null|  0|  0|</p>
-<p>鍙互鐪嬪埌鐨勬槸锛宎vi鏍煎紡鍩烘湰涓嶈兘鐢紝鑰屽湪1080p鍜岄珮鐮佺巼鐨勫姣斾腑锛屽鐒朵笩甯ф儏鍐电浉宸棤鍑狅紝浣嗘槸楂樼爜鐜囩殑鐢婚潰鎾曡鎯呭喌鏄庢樉鏇翠弗閲嶃€傝嚦浜嶩EVC鍜孉VC鐨勫尯鍒紝鐩墠鐪嬫潵AVC鎾斁瑙嗛鏄洿绋冲畾锛屼笉杩囧疄闄呬笂涓ょ缂栫爜宸窛寰堝皬銆?<br>琛ュ厖鐨勬槸锛岄暱鏃堕棿鎾斁瑙嗛鍚庯紝鎾斁瑙嗛鐨勮〃鐜版洿濂斤紝鍙兘鏄洜涓虹啛鑳界敓宸у惂銆傚紑鐜╃瑧鐨勶紝涔熻鏄洜涓篶pu鐨勯鐜囨洿楂樹簡銆?</p>
-<h2 id="鏇存帹鑽愮殑鍋氭硶"><a href="#鏇存帹鑽愮殑鍋氭硶" class="headerlink" title="鏇存帹鑽愮殑鍋氭硶"></a>鏇存帹鑽愮殑鍋氭硶</h2><p>铏界劧浣嗘槸锛屼綋楠屾洿濂界殑鍋氭硶鏄笅杞借棰戣嚦鏈湴鐢ㄥ唴缃殑VLC鎾斁鍣ㄨ鐪嬶紝涓嶄細鏈変换浣曞崱椤垮拰鎾曡锛屼笉杩囩綉椤佃棰戣繕鏄湁鑷繁鐨勭嫭鐗归瓍鍔涘湪鐨勶紝涓嶈繃琛ヤ竴浜涜€佺暘鐨勮瘽璇曡瘯鏈湴涓嬭浇鍙堜綍灏濅笉鍙憿锛?</p>
+<p>在1080p高码率画质下全屏播放新番《群青开场号》</p>
+<table>
+<thead>
+<tr>
+<th>AV1（有画面撕裂）</th>
+<th>HEVC（有画面撕裂）</th>
+<th>AVC （有画面撕裂）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>335</td>
+<td>24</td>
+<td>9</td>
+</tr>
+<tr>
+<td>308</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>23</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>null</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<p>可以看到的是，avi格式基本不能用，而在1080p和高码率的对比中，对然丟帧情况相差无几，但是高码率的画面撕裂情况明显更严重。至于HEVC和AVC的区别，目前看来AVC播放视频是更稳定，不过实际上两种编码差距很小。<br>补充的是，长时间播放视频后，播放视频的表现更好，可能是因为熟能生巧吧。开玩笑的，也许是因为cpu的频率更高了。</p>
+<h2 id="更推荐的做法"><a href="#更推荐的做法" class="headerlink" title="更推荐的做法"></a>更推荐的做法</h2><p>虽然但是，体验更好的做法是下载视频至本地用内置的VLC播放器观看，不会有任何卡顿和撕裂，不过网页视频还是有自己的独特魅力在的，不过补一些老番的话试试本地下载又何尝不可呢？</p>
 
                 
               </div>
@@ -436,7 +464,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>鏍戣帗娲炬祦鐣呮挱鏀?bilibili1080p 瑙嗛</div>
+      <div>树莓派流畅播放 bilibili1080p 视频</div>
       <div>https://bainianlaoyao.github.io/2022/08/16/typecho-recovered-40-树莓派流畅播放bilibili1080p视频/</div>
     </div>
     <div class="license-meta">
@@ -481,9 +509,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/21/typecho-recovered-60-%E5%85%B3%E4%BA%8Epython%E5%92%8Cc-plus-plus%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/" title="鍏充簬python鍜宑++澹版槑鏁扮粍鐨勫尯鍒?">
+                      <a href="/2023/02/21/typecho-recovered-60-%E5%85%B3%E4%BA%8Epython%E5%92%8Cc-plus-plus%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/" title="关于python和c++声明数组的区别">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">鍏充簬python鍜宑++澹版槑鏁扮粍鐨勫尯鍒?</span>
+                        <span class="hidden-mobile">关于python和c++声明数组的区别</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -491,8 +519,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/30/typecho-recovered-9-git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="git瀛︿範绗旇">
-                        <span class="hidden-mobile">git瀛︿範绗旇</span>
+                      <a href="/2022/07/30/typecho-recovered-9-git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="git学习笔记">
+                        <span class="hidden-mobile">git学习笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

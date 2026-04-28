@@ -19,12 +19,12 @@
   <meta name="author" content="百年老妖">
   <meta name="keywords" content="NAS搭建,个人NAS,私有云,家庭服务器,Docker,Linux,自动化追番,qbittorrent,ANI-RSS,AutoBangumi,番剧,动漫,百年老妖">
   
-    <meta name="description" content="涓€鎶婄背璇猴紒  鍒氬垰鍦ㄥ啓棰樼殑鏃跺€欏彂鐜拌嚜宸辩殑浠ｇ爜娴佺▼鍜岀瓟妗堜竴妯′竴鏍凤紝浣嗘槸鑷繁鍗磋秴鏃朵簡锛屽彲绛旀鍗翠笉浼氥€? ~~浜庢槸鎴戝綋鍗虫妸璇勬祴鏈哄櫒鐨勯┈娌℃敹浜唦~ 浜庢槸鎴戞姳鐫€绉戝姹傜煡鐨勭簿绁為€愭鏇挎崲浠ｇ爜锛岀敤鎺у埗鍙橀噺鐨勭瀛︽柟娉曟壘鍑轰簡闂鎵€鍦?&#96;銈ヂ?)銆? 鍏堣缁撹锛?鐢╜t &#x3D; [0] * n 鏉ョ炕">
+    <meta name="description" content="一把米诺！  刚刚在写题的时候发现自己的代码流程和答案一模一样，但是自己却超时了，可答案却不会。 于是我当即把评测机器的马没收了 于是我抱着科学求知的精神逐步替换代码，用控制变量的科学方法找出了问题所在(&#96;ゥ´ )。 先说结论：用t &#x3D; [0] * n 来翻译 int t[n] 非常方便，这样也能把c中的编程经验搬运到python中来，然而，python这样的声明方式的时间复杂度不是O(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鍏充簬python鍜宑++澹版槑鏁扮粍鐨勫尯鍒?">
+<meta property="og:title" content="关于python和c++声明数组的区别">
 <meta property="og:url" content="https://bainianlaoyao.github.io/2023/02/21/typecho-recovered-60-%E5%85%B3%E4%BA%8Epython%E5%92%8Cc-plus-plus%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="百年老妖">
-<meta property="og:description" content="涓€鎶婄背璇猴紒  鍒氬垰鍦ㄥ啓棰樼殑鏃跺€欏彂鐜拌嚜宸辩殑浠ｇ爜娴佺▼鍜岀瓟妗堜竴妯′竴鏍凤紝浣嗘槸鑷繁鍗磋秴鏃朵簡锛屽彲绛旀鍗翠笉浼氥€? ~~浜庢槸鎴戝綋鍗虫妸璇勬祴鏈哄櫒鐨勯┈娌℃敹浜唦~ 浜庢槸鎴戞姳鐫€绉戝姹傜煡鐨勭簿绁為€愭鏇挎崲浠ｇ爜锛岀敤鎺у埗鍙橀噺鐨勭瀛︽柟娉曟壘鍑轰簡闂鎵€鍦?&#96;銈ヂ?)銆? 鍏堣缁撹锛?鐢╜t &#x3D; [0] * n 鏉ョ炕">
+<meta property="og:description" content="一把米诺！  刚刚在写题的时候发现自己的代码流程和答案一模一样，但是自己却超时了，可答案却不会。 于是我当即把评测机器的马没收了 于是我抱着科学求知的精神逐步替换代码，用控制变量的科学方法找出了问题所在(&#96;ゥ´ )。 先说结论：用t &#x3D; [0] * n 来翻译 int t[n] 非常方便，这样也能把c中的编程经验搬运到python中来，然而，python这样的声明方式的时间复杂度不是O(">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-21T03:47:00.000Z">
 <meta property="article:modified_time" content="2023-08-22T04:39:23.000Z">
@@ -46,7 +46,7 @@
   
   
   
-  <title>鍏充簬python鍜宑++澹版槑鏁扮粍鐨勫尯鍒? :) 百年老妖</title>
+  <title>关于python和c++声明数组的区别 :) 百年老妖</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -252,7 +252,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="鍏充簬python鍜宑++澹版槑鏁扮粍鐨勫尯鍒?"></span>
+            <span id="subtitle" data-typed-text="关于python和c++声明数组的区别"></span>
           
         </div>
 
@@ -275,7 +275,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          660 字
+          505 字
         
       </span>
     
@@ -286,7 +286,7 @@
         
         
         
-          6 分钟
+          5 分钟
         
       </span>
     
@@ -332,7 +332,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">鍏充簬python鍜宑++澹版槑鏁扮粍鐨勫尯鍒?</h1>
+            <h1 id="seo-header">关于python和c++声明数组的区别</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
@@ -346,27 +346,27 @@
               <div class="markdown-body">
                 
                 <blockquote>
-<p>涓€鎶婄背璇猴紒</p>
+<p>一把米诺！</p>
 </blockquote>
-<p>鍒氬垰鍦ㄥ啓棰樼殑鏃跺€欏彂鐜拌嚜宸辩殑浠ｇ爜娴佺▼鍜岀瓟妗堜竴妯′竴鏍凤紝浣嗘槸鑷繁鍗磋秴鏃朵簡锛屽彲绛旀鍗翠笉浼氥€?</p>
-<p>~~浜庢槸鎴戝綋鍗虫妸璇勬祴鏈哄櫒鐨勯┈娌℃敹浜唦~</p>
-<p>浜庢槸鎴戞姳鐫€绉戝姹傜煡鐨勭簿绁為€愭鏇挎崲浠ｇ爜锛岀敤鎺у埗鍙橀噺鐨勭瀛︽柟娉曟壘鍑轰簡闂鎵€鍦?&#96;銈ヂ?)銆?</p>
-<p>鍏堣缁撹锛?<br>鐢╜t &#x3D; [0] * n<code> 鏉ョ炕璇?</code>int t[n]&#96; 闈炲父鏂逛究锛岃繖鏍蜂篃鑳芥妸c涓殑缂栫▼缁忛獙鎼繍鍒皃ython涓潵锛岀劧鑰岋紝python杩欐牱鐨勫０鏄庢柟寮忕殑鏃堕棿澶嶆潅搴︿笉鏄疧(1)鐨勩€?</p>
-<p>鎵€浠ュ湪python涓綍鍏ユ暟鎹槸鏈€濂戒娇鐢╜append&#96;鎸囦护鏉ラ€愪釜娣诲姞銆傚惁鍒欏氨浼氭湁鏁扮粍澹版槑鐨勬椂闂存氮璐癸紝鍦ㄦ暟鎹噺澶х殑鏃跺€欓潪甯搁毦鍙椼€?</p>
+<p>刚刚在写题的时候发现自己的代码流程和答案一模一样，但是自己却超时了，可答案却不会。</p>
+<p><del>于是我当即把评测机器的马没收了</del></p>
+<p>于是我抱着科学求知的精神逐步替换代码，用控制变量的科学方法找出了问题所在(&#96;ゥ´ )。</p>
+<p>先说结论：<br>用<code>t = [0] * n</code> 来翻译 <code>int t[n]</code> 非常方便，这样也能把c中的编程经验搬运到python中来，然而，python这样的声明方式的时间复杂度不是O(1)的。</p>
+<p>所以在python中录入数据是最好使用<code>append</code>指令来逐个添加。否则就会有数组声明的时间浪费，在数据量大的时候非常难受。</p>
 <hr>
-<p>鎺ヤ笅鏉ユ槸鎴戠殑瀹為獙锛?</p>
+<p>接下来是我的实验：</p>
 <p>python:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br><br>start = time.process_time()<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">100000</span>):<br>    x = [<span class="hljs-number">0</span>] *<span class="hljs-number">100000</span><br>    <span class="hljs-keyword">del</span> x<br>end = time.process_time()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;鏁扮粍鍒涘缓100000娆℃椂闂?<span class="hljs-subst">&#123;end - start&#125;</span>s&#x27;</span>)<br><br>start = time.process_time()<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1000000</span>):<br>        t = <span class="hljs-number">114514</span><br>        <span class="hljs-keyword">del</span> t<br>end = time.process_time()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;鍙橀噺鍒涘缓100000*10娆℃椂闂?<span class="hljs-subst">&#123;end - start&#125;</span>s&#x27;</span>)<br>``````<br><br>杈撳嚭锛?<br><br></code></pre></td></tr></table></figure>
-<p>鏁扮粍鍒涘缓100000娆℃椂闂?13.390625s<br>鍙橀噺鍒涘缓100000*10娆℃椂闂?0.0625s</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><br>鍙互鐪嬪埌鏁扮粍鍜屽彉閲忓垱寤洪€熷害鐩稿樊宸ㄥぇ锛岀敱浜庡彉閲忓垱寤虹浉姣旀暟缁勫垱寤哄疄鍦ㄥ揩澶锛屾墍浠ュ父閲忕殑鍒涘缓娆℃暟瑕佸涓婂崄鍊嶏紝鍚﹀垯鍙細鏄剧ず<span class="hljs-number">0.0</span>绉?<br><br>c++:<br><br>```cpp<br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;ctime&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-type">clock_t</span> start,end;<br>	start = <span class="hljs-built_in">clock</span>();<br>	<span class="hljs-type">double</span> time;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">long</span> <span class="hljs-type">long</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10000000000</span>;i++)&#123;<br>		<span class="hljs-type">int</span> x [<span class="hljs-number">1000000</span>];<br>	&#125;<br>	<br>	end = <span class="hljs-built_in">clock</span>();<br>	<br>	time = <span class="hljs-built_in">static_cast</span>&lt;<span class="hljs-type">double</span>&gt;(end-start)/CLOCKS_PER_SEC;<br>	cout&lt;&lt;<span class="hljs-string">&quot;澹版槑鏁扮粍&quot;</span>&lt;&lt;time&lt;&lt;endl;<br>	<br>	start = <span class="hljs-built_in">clock</span>();<br>		<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">long</span> <span class="hljs-type">long</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10000000000</span>;i++)&#123;<br>			<span class="hljs-type">int</span> x;<br>		&#125;<br>		<br>		end = <span class="hljs-built_in">clock</span>();<br>		<br>		time = <span class="hljs-built_in">static_cast</span>&lt;<span class="hljs-type">double</span>&gt;(end-start)/CLOCKS_PER_SEC;<br>		cout&lt;&lt;<span class="hljs-string">&quot;澹版槑鍙橀噺&quot;</span>&lt;&lt;time&lt;&lt;endl;<br>	<br>	<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> time<br><br>start = time.process_time()<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">100000</span>):<br>    x = [<span class="hljs-number">0</span>] *<span class="hljs-number">100000</span><br>    <span class="hljs-keyword">del</span> x<br>end = time.process_time()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;数组创建100000次时间:<span class="hljs-subst">&#123;end - start&#125;</span>s&#x27;</span>)<br><br>start = time.process_time()<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1000000</span>):<br>        t = <span class="hljs-number">114514</span><br>        <span class="hljs-keyword">del</span> t<br>end = time.process_time()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;变量创建100000*10次时间:<span class="hljs-subst">&#123;end - start&#125;</span>s&#x27;</span>)<br>``````<br><br>输出：<br><br></code></pre></td></tr></table></figure>
+<p>数组创建100000次时间:13.390625s<br>变量创建100000*10次时间:0.0625s</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><br>可以看到数组和变量创建速度相差巨大，由于变量创建相比数组创建实在快太多，所以常量的创建次数要多上十倍，否则只会显示<span class="hljs-number">0.0</span>秒.<br><br>c++:<br><br>```cpp<br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;ctime&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-type">clock_t</span> start,end;<br>	start = <span class="hljs-built_in">clock</span>();<br>	<span class="hljs-type">double</span> time;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">long</span> <span class="hljs-type">long</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10000000000</span>;i++)&#123;<br>		<span class="hljs-type">int</span> x [<span class="hljs-number">1000000</span>];<br>	&#125;<br>	<br>	end = <span class="hljs-built_in">clock</span>();<br>	<br>	time = <span class="hljs-built_in">static_cast</span>&lt;<span class="hljs-type">double</span>&gt;(end-start)/CLOCKS_PER_SEC;<br>	cout&lt;&lt;<span class="hljs-string">&quot;声明数组&quot;</span>&lt;&lt;time&lt;&lt;endl;<br>	<br>	start = <span class="hljs-built_in">clock</span>();<br>		<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">long</span> <span class="hljs-type">long</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10000000000</span>;i++)&#123;<br>			<span class="hljs-type">int</span> x;<br>		&#125;<br>		<br>		end = <span class="hljs-built_in">clock</span>();<br>		<br>		time = <span class="hljs-built_in">static_cast</span>&lt;<span class="hljs-type">double</span>&gt;(end-start)/CLOCKS_PER_SEC;<br>		cout&lt;&lt;<span class="hljs-string">&quot;声明变量&quot;</span>&lt;&lt;time&lt;&lt;endl;<br>	<br>	<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>杈撳嚭锛?</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">澹版槑鏁扮粍2.519<br>澹版槑鍙橀噺2.49<br></code></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">声明数组2.519<br>声明变量2.49<br></code></pre></td></tr></table></figure>
 
-<p>鍙互鐪嬪埌锛宑++閲屽０鏄庢暟缁勫拰澹版槑鍙橀噺鐨勯€熷害宸窛闈炲父灏忋€?</p>
+<p>可以看到，c++里声明数组和声明变量的速度差距非常小。</p>
 <hr>
-<p>鎵€浠ョ敤python鐨勬椂鍊欓潪鐗规畩鎯呭喌涓嶈鐩存帴鐢╜t &#x3D; [0] * n&#96;澹版槑鏁扮粍銆?</p>
-<p>杩樻槸璇村彧鏈夋垜鐜板湪鎵嶇煡閬撹繖鐐癸紵鈯傚健鈽?)写&#96;)</p>
+<p>所以用python的时候非特殊情况不要直接用<code>t = [0] * n</code>声明数组。</p>
+<p>还是说只有我现在才知道这点？⊂彡☆))д&#96;)</p>
 
                 
               </div>
@@ -384,7 +384,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>鍏充簬python鍜宑++澹版槑鏁扮粍鐨勫尯鍒?</div>
+      <div>关于python和c++声明数组的区别</div>
       <div>https://bainianlaoyao.github.io/2023/02/21/typecho-recovered-60-关于python和c-plus-plus声明数组的区别/</div>
     </div>
     <div class="license-meta">
@@ -429,9 +429,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/02/typecho-recovered-61-Python-%E5%B0%86%E7%B1%BB%E5%B1%9E%E6%80%A7%E5%AE%9A%E4%B9%89%E4%B8%BA%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B/" title="Python 锛?灏嗙被灞炴€у畾涔変负绫荤殑瀹炰緥">
+                      <a href="/2023/03/02/typecho-recovered-61-Python-%E5%B0%86%E7%B1%BB%E5%B1%9E%E6%80%A7%E5%AE%9A%E4%B9%89%E4%B8%BA%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B/" title="Python ： 将类属性定义为类的实例">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python 锛?灏嗙被灞炴€у畾涔変负绫荤殑瀹炰緥</span>
+                        <span class="hidden-mobile">Python ： 将类属性定义为类的实例</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -439,8 +439,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/16/typecho-recovered-40-%E6%A0%91%E8%8E%93%E6%B4%BE%E6%B5%81%E7%95%85%E6%92%AD%E6%94%BEbilibili1080p%E8%A7%86%E9%A2%91/" title="鏍戣帗娲炬祦鐣呮挱鏀?bilibili1080p 瑙嗛">
-                        <span class="hidden-mobile">鏍戣帗娲炬祦鐣呮挱鏀?bilibili1080p 瑙嗛</span>
+                      <a href="/2022/08/16/typecho-recovered-40-%E6%A0%91%E8%8E%93%E6%B4%BE%E6%B5%81%E7%95%85%E6%92%AD%E6%94%BEbilibili1080p%E8%A7%86%E9%A2%91/" title="树莓派流畅播放 bilibili1080p 视频">
+                        <span class="hidden-mobile">树莓派流畅播放 bilibili1080p 视频</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -19,12 +19,12 @@
   <meta name="author" content="百年老妖">
   <meta name="keywords" content="NAS搭建,个人NAS,私有云,家庭服务器,Docker,Linux,自动化追番,qbittorrent,ANI-RSS,AutoBangumi,番剧,动漫,百年老妖">
   
-    <meta name="description" content="鐙犵嫚鐨勫濞冿紒  12345678910111213141516171819202122class static_property:    def __init__(self, getter):        self.__getter &#x3D; getter    def __get__(self, obj, objtype):        return self.__getter(objty">
+    <meta name="description" content="狠狠的套娃！  12345678910111213141516171819202122class static_property:    def __init__(self, getter):        self.__getter &#x3D; getter    def __get__(self, obj, objtype):        return self.__getter(objtype)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 锛?灏嗙被灞炴€у畾涔変负绫荤殑瀹炰緥">
+<meta property="og:title" content="Python ： 将类属性定义为类的实例">
 <meta property="og:url" content="https://bainianlaoyao.github.io/2023/03/02/typecho-recovered-61-Python-%E5%B0%86%E7%B1%BB%E5%B1%9E%E6%80%A7%E5%AE%9A%E4%B9%89%E4%B8%BA%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="百年老妖">
-<meta property="og:description" content="鐙犵嫚鐨勫濞冿紒  12345678910111213141516171819202122class static_property:    def __init__(self, getter):        self.__getter &#x3D; getter    def __get__(self, obj, objtype):        return self.__getter(objty">
+<meta property="og:description" content="狠狠的套娃！  12345678910111213141516171819202122class static_property:    def __init__(self, getter):        self.__getter &#x3D; getter    def __get__(self, obj, objtype):        return self.__getter(objtype)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-02T04:11:00.000Z">
 <meta property="article:modified_time" content="2023-08-22T04:39:18.000Z">
@@ -46,7 +46,7 @@
   
   
   
-  <title>Python 锛?灏嗙被灞炴€у畾涔変负绫荤殑瀹炰緥 :) 百年老妖</title>
+  <title>Python ： 将类属性定义为类的实例 :) 百年老妖</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -252,7 +252,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Python 锛?灏嗙被灞炴€у畾涔変负绫荤殑瀹炰緥"></span>
+            <span id="subtitle" data-typed-text="Python ： 将类属性定义为类的实例"></span>
           
         </div>
 
@@ -275,7 +275,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          51 字
+          47 字
         
       </span>
     
@@ -332,7 +332,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Python 锛?灏嗙被灞炴€у畾涔変负绫荤殑瀹炰緥</h1>
+            <h1 id="seo-header">Python ： 将类属性定义为类的实例</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
@@ -346,11 +346,11 @@
               <div class="markdown-body">
                 
                 <blockquote>
-<p>鐙犵嫚鐨勫濞冿紒</p>
+<p>狠狠的套娃！</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">static_property</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, getter</span>):<br>        <span class="hljs-variable language_">self</span>.__getter = getter<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__get__</span>(<span class="hljs-params">self, obj, objtype</span>):<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.__getter(objtype)<br><br><span class="hljs-meta">    @staticmethod</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__call__</span>(<span class="hljs-params">getter_fn</span>):<br>        <span class="hljs-keyword">return</span> static_property(getter_fn)<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span>:<br>    _bar = <span class="hljs-literal">None</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, spam</span>):<br>        <span class="hljs-variable language_">self</span>.spam = spam<br><br><span class="hljs-meta">    @static_property</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">bar</span>(<span class="hljs-params">cls</span>):<br>        <span class="hljs-keyword">if</span> cls._bar <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:<br>            cls._bar = A(<span class="hljs-number">10</span>)<br>        <span class="hljs-keyword">return</span> cls._bar<br><span class="hljs-built_in">print</span>(A._bar)<br></code></pre></td></tr></table></figure>
 
-<p>闈炲父鐨勫ソ鐢?</p>
+<p>非常的好用</p>
 
                 
               </div>
@@ -368,7 +368,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Python 锛?灏嗙被灞炴€у畾涔変负绫荤殑瀹炰緥</div>
+      <div>Python ： 将类属性定义为类的实例</div>
       <div>https://bainianlaoyao.github.io/2023/03/02/typecho-recovered-61-Python-将类属性定义为类的实例/</div>
     </div>
     <div class="license-meta">
@@ -423,8 +423,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/21/typecho-recovered-60-%E5%85%B3%E4%BA%8Epython%E5%92%8Cc-plus-plus%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/" title="鍏充簬python鍜宑++澹版槑鏁扮粍鐨勫尯鍒?">
-                        <span class="hidden-mobile">鍏充簬python鍜宑++澹版槑鏁扮粍鐨勫尯鍒?</span>
+                      <a href="/2023/02/21/typecho-recovered-60-%E5%85%B3%E4%BA%8Epython%E5%92%8Cc-plus-plus%E5%A3%B0%E6%98%8E%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/" title="关于python和c++声明数组的区别">
+                        <span class="hidden-mobile">关于python和c++声明数组的区别</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

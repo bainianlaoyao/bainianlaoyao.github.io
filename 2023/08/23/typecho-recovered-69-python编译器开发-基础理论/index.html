@@ -19,16 +19,16 @@
   <meta name="author" content="百年老妖">
   <meta name="keywords" content="NAS搭建,个人NAS,私有云,家庭服务器,Docker,Linux,自动化追番,qbittorrent,ANI-RSS,AutoBangumi,番剧,动漫,百年老妖">
   
-    <meta name="description" content="鎰熻寰堝帀瀹崇殑鏍峰瓙  鍓嶈█涓轰簡瀹屾垚鎴戠殑椤圭洰, 浣跨敤python鍐欎簡涓€涓紪璇戝櫒, 杩樺啓浜嗙瘒璁烘枃, 涓嶈浆杞藉埌鍗氬瀹炲湪澶氮璐逛簡. 鍦ㄨ鏂囦腑, 鎴戝疄鐜颁簡涓€绉峓琚玜-level瀹氫箟鐨勪吉浠ｇ爜](https:&#x2F;&#x2F;pastpapers.co&#x2F;cie&#x2F;A-Level&#x2F;Computer%20Science%20(for%20first%20examinat">
+    <meta name="description" content="感觉很厉害的样子  前言为了完成我的项目, 使用python写了一个编译器, 还写了篇论文, 不转载到博客实在太浪费了. 在论文中, 我实现了一种被a-level定义的伪代码, 虽然叫伪代码, 但这群人只是照着BASIC创造了一门垃圾的语言. 这系列博客出于教育目的, 但我不会非常深入探讨理论, 鲁迅曾经曰过: people should have b number, 对于学术理论, 机械工业出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python缂栬瘧鍣ㄥ紑鍙?: 鍩虹鐞嗚">
+<meta property="og:title" content="python编译器开发0: 基础理论">
 <meta property="og:url" content="https://bainianlaoyao.github.io/2023/08/23/typecho-recovered-69-python%E7%BC%96%E8%AF%91%E5%99%A8%E5%BC%80%E5%8F%91-%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/index.html">
 <meta property="og:site_name" content="百年老妖">
-<meta property="og:description" content="鎰熻寰堝帀瀹崇殑鏍峰瓙  鍓嶈█涓轰簡瀹屾垚鎴戠殑椤圭洰, 浣跨敤python鍐欎簡涓€涓紪璇戝櫒, 杩樺啓浜嗙瘒璁烘枃, 涓嶈浆杞藉埌鍗氬瀹炲湪澶氮璐逛簡. 鍦ㄨ鏂囦腑, 鎴戝疄鐜颁簡涓€绉峓琚玜-level瀹氫箟鐨勪吉浠ｇ爜](https:&#x2F;&#x2F;pastpapers.co&#x2F;cie&#x2F;A-Level&#x2F;Computer%20Science%20(for%20first%20examinat">
+<meta property="og:description" content="感觉很厉害的样子  前言为了完成我的项目, 使用python写了一个编译器, 还写了篇论文, 不转载到博客实在太浪费了. 在论文中, 我实现了一种被a-level定义的伪代码, 虽然叫伪代码, 但这群人只是照着BASIC创造了一门垃圾的语言. 这系列博客出于教育目的, 但我不会非常深入探讨理论, 鲁迅曾经曰过: people should have b number, 对于学术理论, 机械工业出">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://centuryoldgoblin.xyz/usr/uploads/2023/08/1115112964.png">
 <meta property="article:published_time" content="2023-08-22T22:30:59.000Z">
-<meta property="article:modified_time" content="2026-04-28T06:03:25.807Z">
+<meta property="article:modified_time" content="2026-04-28T06:12:05.360Z">
 <meta property="article:author" content="百年老妖">
 <meta property="article:tag" content="NAS搭建">
 <meta property="article:tag" content="个人NAS">
@@ -48,7 +48,7 @@
   
   
   
-  <title>python缂栬瘧鍣ㄥ紑鍙?: 鍩虹鐞嗚 :) 百年老妖</title>
+  <title>python编译器开发0: 基础理论 :) 百年老妖</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -254,7 +254,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="python缂栬瘧鍣ㄥ紑鍙?: 鍩虹鐞嗚"></span>
+            <span id="subtitle" data-typed-text="python编译器开发0: 基础理论"></span>
           
         </div>
 
@@ -277,7 +277,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.1k 字
+          2.2k 字
         
       </span>
     
@@ -288,7 +288,7 @@
         
         
         
-          26 分钟
+          19 分钟
         
       </span>
     
@@ -334,7 +334,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">python缂栬瘧鍣ㄥ紑鍙?: 鍩虹鐞嗚</h1>
+            <h1 id="seo-header">python编译器开发0: 基础理论</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
@@ -348,74 +348,74 @@
               <div class="markdown-body">
                 
                 <blockquote>
-<p>鎰熻寰堝帀瀹崇殑鏍峰瓙</p>
+<p>感觉很厉害的样子</p>
 </blockquote>
-<h2 id="鍓嶈█"><a href="#鍓嶈█" class="headerlink" title="鍓嶈█"></a>鍓嶈█</h2><p>涓轰簡瀹屾垚鎴戠殑椤圭洰, 浣跨敤python鍐欎簡涓€涓紪璇戝櫒, 杩樺啓浜嗙瘒璁烘枃, 涓嶈浆杞藉埌鍗氬瀹炲湪澶氮璐逛簡.</p>
-<p>鍦ㄨ鏂囦腑, 鎴戝疄鐜颁簡涓€绉峓琚玜-level瀹氫箟鐨勪吉浠ｇ爜](<a target="_blank" rel="noopener" href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/Syllabus%20&%20Specimen/9618_y21_sg.pdf">https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/Syllabus%20&amp;%20Specimen/9618_y21_sg.pdf</a>), 铏界劧鍙吉浠ｇ爜, 浣嗚繖缇や汉鍙槸鐓х潃BASIC鍒涢€犱簡涓€闂ㄥ瀮鍦剧殑璇█.</p>
-<p>杩欑郴鍒楀崥瀹㈠嚭浜庢暀鑲茬洰鐨? 浣嗘垜涓嶄細闈炲父娣卞叆鎺㈣鐞嗚, 椴佽繀鏇剧粡鏇拌繃: people should have b number, 瀵逛簬瀛︽湳鐞嗚, 鏈烘宸ヤ笟鍑虹増绀剧殑<a href="%5Bhttps://%5D(https://zh.wikipedia.org/wiki/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86_(%E6%95%99%E6%9D%90))">缂栬瘧鍘熺悊</a>(Compilers: Principles, Techniques, and Tools)鏄竴涓潪甯稿ソ鐨勯€夋嫨.</p>
-<p>鍥犳, 鎴戜細鏇村姞鍏虫敞浜庣紪璇戝櫒鐨勫疄鐜板眰闈? 浣嗕负浜嗕互鍚庢枃绔犵殑鎻忚堪鏂逛究, 浠嶇劧闇€瑕佷粙缁嶄竴浜涘熀纭€鐞嗚.</p>
-<h2 id="缂栬瘧杩囩▼"><a href="#缂栬瘧杩囩▼" class="headerlink" title="缂栬瘧杩囩▼"></a>缂栬瘧杩囩▼</h2><h3 id="1-缂栬瘧娴佺▼"><a href="#1-缂栬瘧娴佺▼" class="headerlink" title="1. 缂栬瘧娴佺▼"></a>1. 缂栬瘧娴佺▼</h3><p>鍦ㄦ湰绔犱腑锛屾垜灏嗛€氳繃浼唬鐮佷粙缁嶈繖涓紪璇戝櫒鐨勬暣涓伐浣滄祦绋嬶細</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为了完成我的项目, 使用python写了一个编译器, 还写了篇论文, 不转载到博客实在太浪费了.</p>
+<p>在论文中, 我实现了一种<a target="_blank" rel="noopener" href="https://pastpapers.co/cie/A-Level/Computer%20Science%20(for%20first%20examination%20in%202021)%20(9618)/Syllabus%20&%20Specimen/9618_y21_sg.pdf">被a-level定义的伪代码</a>, 虽然叫伪代码, 但这群人只是照着BASIC创造了一门垃圾的语言.</p>
+<p>这系列博客出于教育目的, 但我不会非常深入探讨理论, 鲁迅曾经曰过: people should have b number, 对于学术理论, 机械工业出版社的<a href="%5Bhttps://%5D(https://zh.wikipedia.org/wiki/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86_(%E6%95%99%E6%9D%90))">编译原理</a>(Compilers: Principles, Techniques, and Tools)是一个非常好的选择.</p>
+<p>因此, 我会更加关注于编译器的实现层面, 但为了以后文章的描述方便, 仍然需要介绍一些基础理论.</p>
+<h2 id="编译过程"><a href="#编译过程" class="headerlink" title="编译过程"></a>编译过程</h2><h3 id="1-编译流程"><a href="#1-编译流程" class="headerlink" title="1. 编译流程"></a>1. 编译流程</h3><p>在本章中，我将通过伪代码介绍这个编译器的整个工作流程：</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">DECLARE</span> A : INTEGER<br><span class="hljs-attribute">A</span> &lt;- <span class="hljs-number">1</span>+<span class="hljs-number">2</span>*<span class="hljs-number">3</span><br><span class="hljs-attribute">IF</span> A &gt;= <span class="hljs-number">5</span> THEN<br>    <span class="hljs-attribute">OUTPUT</span> A<br><span class="hljs-attribute">ENDIF</span><br></code></pre></td></tr></table></figure>
 
-<p>閫夋嫨杩欐浠ｇ爜鐨勫師鍥犳槸瀹冩兜鐩栦簡浼唬鐮佺殑鍑犱釜涓昏鐗圭偣锛屽寘鎷〃杈惧紡璁＄畻銆佸彉閲忓鐞嗐€佹潯浠惰鍙ュ拰璺宠浆銆傚洜姝わ紝鎴戜滑鍙互閫氳繃瀵硅繖娈典唬鐮佺殑缂栬瘧杩囩▼鏉ヤ簡瑙ｇ紪璇戝櫒鐨勮缁嗗伐浣滄祦绋嬨€?</p>
-<h3 id="1-1-璇嶆硶鍒嗘瀽"><a href="#1-1-璇嶆硶鍒嗘瀽" class="headerlink" title="1.1 璇嶆硶鍒嗘瀽"></a>1.1 璇嶆硶鍒嗘瀽</h3><p>鍦ㄧ紪璇戣繃绋嬬殑绗竴姝ヤ腑锛岃瘝娉曞垎鏋愬櫒鐨勪富瑕佷换鍔℃槸璇嗗埆婧愪唬鐮佷腑鐨勬爣璁帮紝骞跺皢瀹冧滑杞崲涓哄唴閮ㄨ〃绀恒€傝瘝娉曞垎鏋愬櫒閫氳繃灏嗚緭鍏ョ殑婧愪唬鐮佸垎瑙ｄ负鍗曚釜鏍囪鏉ュ疄鐜拌繖涓€鐩爣锛屾爣璁版槸缂栬瘧鍣ㄤ腑鐢ㄤ簬琛ㄧず婧愪唬鐮佷腑鍗曚釜璇箟鍗曞厓鐨勬渶灏忓崟浣嶃€?</p>
-<p>姣忎釜鏍囪鐢变袱閮ㄥ垎缁勬垚锛氬悕绉板拰灞炴€у€笺€俙&lt;name, value&gt;&#96;銆傛爣璁扮殑鍚嶇О鏄湪璇硶鍒嗘瀽鏈熼棿鐢ㄤ簬鍙ユ硶鍒嗘瀽鐨勬娊璞＄鍙疯〃绀恒€傛爣璁扮殑灞炴€у€煎彲浠ユ槸鎸囧悜鍖呭惈鏈夊叧鏍囪鐨勯檮鍔犱俊鎭殑绗﹀彿琛ㄧ殑鎸囬拡锛屾垨鑰呭畠鍙互琛ㄧず涓€涓父閲忓€笺€傝繖浜涙爣璁板彲浠ヨ鍒嗙被涓哄叧閿瓧銆佹枃瀛椼€佹搷浣滅鎴栨爣璇嗙銆?</p>
-<p>閫氳繃璇嶆硶鍒嗘瀽锛岃瘝娉曞垎鏋愬櫒纭繚婧愪唬鐮侀伒寰紪绋嬭瑷€瀹氫箟鐨勯瀹氱粨鏋勩€傛崲鍙ヨ瘽璇达紝璇嶆硶鍒嗘瀽鍣ㄧ‘淇濇簮浠ｇ爜鐢辩紪绋嬭瑷€璇硶璇嗗埆鐨勬湁鏁堝崟璇嶅拰鐭缁勬垚锛屼粠鑰屽噺灏戣娉曢敊璇殑鍙兘鎬с€?</p>
-<p>缁忚繃璇嶆硶鍒嗘瀽鍣ㄥ鐞嗗悗锛岃緭鍏ョ殑婧愪唬鐮佽杞崲涓轰互涓嬫爣璁版祦锛?</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">DECLARE</span>&gt;</span></span> <span class="language-xml">&lt;id, 鈥楢鈥? &lt;:&gt;</span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">INTEGER</span>&gt;</span></span><br><span class="language-xml">&lt;id, 鈥楢鈥? &lt;&lt;-&gt;</span> <span class="language-xml">&lt;num,1&gt;</span> &lt;+&gt; <span class="language-xml">&lt;num,2&gt;</span> &lt;<span class="hljs-emphasis">*&gt; <span class="language-xml">&lt;num,3&gt;</span></span><br><span class="hljs-emphasis"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">IF</span>&gt;</span></span> <span class="language-xml">&lt;id,0&gt;</span>&lt;&gt;=&gt;<span class="language-xml">&lt;num,5&gt;</span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">THEN</span>&gt;</span></span></span><br><span class="hljs-emphasis">    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">OUTPUT</span>&gt;</span></span><span class="language-xml">&lt;id, 鈥橝鈥?</span></span><br><span class="language-xml"><span class="hljs-emphasis"><span class="hljs-tag">&lt;<span class="hljs-name">ENDIF</span>&gt;</span></span></span><br></code></pre></td></tr></table></figure>
+<p>选择这段代码的原因是它涵盖了伪代码的几个主要特点，包括表达式计算、变量处理、条件语句和跳转。因此，我们可以通过对这段代码的编译过程来了解编译器的详细工作流程。</p>
+<h3 id="1-1-词法分析"><a href="#1-1-词法分析" class="headerlink" title="1.1 词法分析"></a>1.1 词法分析</h3><p>在编译过程的第一步中，词法分析器的主要任务是识别源代码中的标记，并将它们转换为内部表示。词法分析器通过将输入的源代码分解为单个标记来实现这一目标，标记是编译器中用于表示源代码中单个语义单元的最小单位。</p>
+<p>每个标记由两部分组成：名称和属性值。<code>&lt;name, value&gt;</code>。标记的名称是在语法分析期间用于句法分析的抽象符号表示。标记的属性值可以是指向包含有关标记的附加信息的符号表的指针，或者它可以表示一个常量值。这些标记可以被分类为关键字、文字、操作符或标识符。</p>
+<p>通过词法分析，词法分析器确保源代码遵循编程语言定义的预定结构。换句话说，词法分析器确保源代码由编程语言语法识别的有效单词和短语组成，从而减少语法错误的可能性。</p>
+<p>经过词法分析器处理后，输入的源代码被转换为以下标记流：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">DECLARE</span>&gt;</span></span> <span class="language-xml">&lt;id, ‘A’&gt;</span> &lt;:&gt;<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">INTEGER</span>&gt;</span></span><br><span class="language-xml">&lt;id, ‘A’&gt;</span> &lt;&lt;-&gt; <span class="language-xml">&lt;num,1&gt;</span> &lt;+&gt; <span class="language-xml">&lt;num,2&gt;</span> &lt;<span class="hljs-emphasis">*&gt; <span class="language-xml">&lt;num,3&gt;</span></span><br><span class="hljs-emphasis"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">IF</span>&gt;</span></span> <span class="language-xml">&lt;id,0&gt;</span>&lt;&gt;=&gt;<span class="language-xml">&lt;num,5&gt;</span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">THEN</span>&gt;</span></span></span><br><span class="hljs-emphasis">    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">OUTPUT</span>&gt;</span></span><span class="language-xml">&lt;id, ’A’&gt;</span></span><br><span class="hljs-emphasis"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ENDIF</span>&gt;</span></span></span><br></code></pre></td></tr></table></figure>
 
-<h3 id="1-2-鍙ユ硶鍒嗘瀽"><a href="#1-2-鍙ユ硶鍒嗘瀽" class="headerlink" title="1.2 鍙ユ硶鍒嗘瀽"></a>1.2 鍙ユ硶鍒嗘瀽</h3><p>鍦ㄨ緭鍏ョ殑婧愪唬鐮佺粡杩囪瘝娉曞垎鏋愬櫒鏍囪鍖栧悗锛岃В鏋愬櫒璐熻矗鍒嗘瀽婧愪唬鐮佺殑璇硶锛屽苟浠庢爣璁版祦鏋勫缓鎶借薄璇硶鏍戯紙AST锛夈€傚彞娉曞垎鏋愮殑涓昏鐩爣鏄‘淇濇簮浠ｇ爜鍏锋湁鏈夋晥鐨勭粨鏋勶紝骞惰瘑鍒唬鐮佷腑鐨勬綔鍦ㄩ敊璇€?</p>
-<p>瑙ｆ瀽鍣ㄤ娇鐢ㄤ竴缁勮鍒欙紝涔熺О涓烘枃娉曪紝鏉ョ‘瀹氭爣璁版祦鏄惁瀵瑰簲浜庢湁鏁堢殑婧愪唬鐮併€傚鏋滄槸锛岃В鏋愬櫒鏋勫缓琛ㄧず婧愪唬鐮佸眰娆＄粨鏋勭殑AST銆侫ST鏄竴绉嶇被浼兼爲鐘剁殑鏁版嵁缁撴瀯锛屽叾涓瘡涓妭鐐硅〃绀烘簮浠ｇ爜鐨勮娉曞厓绱狅紝杈硅〃绀鸿繖浜涘厓绱犱箣闂寸殑鍏崇郴銆?</p>
-<p>鍦ㄦ彁渚涚殑浼唬鐮佷腑锛屽彞娉曞垎鏋愯鍒欏彲浠ュ畾涔夊涓嬶細</p>
+<h3 id="1-2-句法分析"><a href="#1-2-句法分析" class="headerlink" title="1.2 句法分析"></a>1.2 句法分析</h3><p>在输入的源代码经过词法分析器标记化后，解析器负责分析源代码的语法，并从标记流构建抽象语法树（AST）。句法分析的主要目标是确保源代码具有有效的结构，并识别代码中的潜在错误。</p>
+<p>解析器使用一组规则，也称为文法，来确定标记流是否对应于有效的源代码。如果是，解析器构建表示源代码层次结构的AST。AST是一种类似树状的数据结构，其中每个节点表示源代码的语法元素，边表示这些元素之间的关系。</p>
+<p>在提供的伪代码中，句法分析规则可以定义如下：</p>
 <ol>
-<li>澹版槑涓€涓暣鏁板彉閲?A銆?</li>
-<li>灏嗗彉閲?A 鐨勫€煎垎閰嶄负 1+2*3銆?</li>
-<li>濡傛灉鍙橀噺 A 鐨勫€煎ぇ浜庢垨绛変簬 5锛屽垯杈撳嚭鍙橀噺 A 鐨勫€笺€?</li>
+<li>声明一个整数变量 A。</li>
+<li>将变量 A 的值分配为 1+2*3。</li>
+<li>如果变量 A 的值大于或等于 5，则输出变量 A 的值。</li>
 </ol>
-<p>浣跨敤杩欎簺瑙勫垯锛岃В鏋愬櫒鍙互鏋勫缓浠ｈ〃鎻愪緵鐨勪吉浠ｇ爜缁撴瀯鐨?AST銆?</p>
-<p><img src="https://centuryoldgoblin.xyz/usr/uploads/2023/08/1115112964.png" srcset="/img/loading.gif" lazyload alt="琛ㄧず浼唬鐮佺粨鏋勭殑璇硶鏍戠ず鎰忓浘.png"></p>
-<p>姝ゅ锛屽彉閲忕殑澹版槑涓嶄細鍚戝悗浼犳挱锛岃€屾槸鐩存帴鍦ㄨ娉曞垎鏋愰樁娈靛鐞嗐€傚叿浣撴潵璇达紝灏嗗湪绗﹀彿琛ㄤ腑娣诲姞鏂扮殑浣嶇疆锛屼互瀛樺偍鐩稿簲鐨勫彉閲忋€傜鍙疯〃鏄湪绋嬪簭璇硶鍒嗘瀽鍜屾墽琛岃繃绋嬩腑鐢ㄤ簬瀛樺偍鍙橀噺鍐呭鐨勮〃鏍笺€傞€氳繃绗﹀彿琛紝鍙橀噺鍙互閫氳繃绗﹀彿琛ㄤ腑鐨勫湴鍧€寮曠敤锛屼粠鑰屽疄鐜版洿楂樼殑杩愯鏃舵晥鐜囧拰杈冧綆鐨勭▼搴忓鏉傛€с€?</p>
-<h3 id="1-3-璇箟鍒嗘瀽"><a href="#1-3-璇箟鍒嗘瀽" class="headerlink" title="1.3 璇箟鍒嗘瀽"></a>1.3 璇箟鍒嗘瀽</h3><p>鍦ㄨ娉曞垎鏋愪箣鍚庯紝缂栬瘧鍣ㄦ墽琛岃涔夊垎鏋愶紝浠ョ‘淇濇簮浠ｇ爜閬靛惊缂栫▼璇█鐨勮鍒欙紝涓旂▼搴忕殑鍚箟鏄纭殑銆傝涔夊垎鏋愮殑涓昏浠诲姟鍖呮嫭绫诲瀷妫€鏌ャ€佷綔鐢ㄥ煙妫€鏌ュ拰妫€鏌ヨ涔夐敊璇€?</p>
-<p>鍦ㄦ彁渚涚殑浼唬鐮佷腑锛岃涔夊垎鏋愰渶瑕佹墽琛屼互涓嬩换鍔★細</p>
+<p>使用这些规则，解析器可以构建代表提供的伪代码结构的 AST。</p>
+<p><img src="https://centuryoldgoblin.xyz/usr/uploads/2023/08/1115112964.png" srcset="/img/loading.gif" lazyload alt="表示伪代码结构的语法树示意图.png"></p>
+<p>此外，变量的声明不会向后传播，而是直接在语法分析阶段处理。具体来说，将在符号表中添加新的位置，以存储相应的变量。符号表是在程序语法分析和执行过程中用于存储变量内容的表格。通过符号表，变量可以通过符号表中的地址引用，从而实现更高的运行时效率和较低的程序复杂性。</p>
+<h3 id="1-3-语义分析"><a href="#1-3-语义分析" class="headerlink" title="1.3 语义分析"></a>1.3 语义分析</h3><p>在语法分析之后，编译器执行语义分析，以确保源代码遵循编程语言的规则，且程序的含义是正确的。语义分析的主要任务包括类型检查、作用域检查和检查语义错误。</p>
+<p>在提供的伪代码中，语义分析需要执行以下任务：</p>
 <ol>
-<li>妫€鏌ュ彉閲?A 鏄惁宸插湪褰撳墠浣滅敤鍩熶腑澹版槑銆?</li>
-<li>璁＄畻琛ㄨ揪寮?1+2*3锛岀‘淇濇搷浣滄暟鍜岃繍绠楃褰兼鍏煎锛屽苟涓旂粨鏋滄槸鏁存暟绫诲瀷銆傝琛ㄨ揪寮忕殑缁撴灉搴斾笌鍙橀噺 A 鐨勫０鏄庣被鍨嬶紙鏁存暟锛変竴鑷淬€?</li>
-<li>妫€鏌ユ潯浠惰〃杈惧紡 A&gt;&#x3D;5 鏄惁涓哄竷灏旂被鍨嬶紝杩欐槸 IF-THEN 璇彞鎵€闇€鐨勩€?</li>
-<li>妫€鏌ュ彉閲?A 鏄惁鍦?OUTPUT 璇彞涓娇鐢紝纭繚 A 鐨勭被鍨嬫槸 OUTPUT 璇彞鏀寔鐨勭被鍨嬨€傚鏋?A 鐨勭被鍨嬫槸甯冨皵绫诲瀷锛屽垯搴旀姤鍛婄被鍨嬮敊璇€?</li>
+<li>检查变量 A 是否已在当前作用域中声明。</li>
+<li>计算表达式 1+2*3，确保操作数和运算符彼此兼容，并且结果是整数类型。该表达式的结果应与变量 A 的声明类型（整数）一致。</li>
+<li>检查条件表达式 A&gt;&#x3D;5 是否为布尔类型，这是 IF-THEN 语句所需的。</li>
+<li>检查变量 A 是否在 OUTPUT 语句中使用，确保 A 的类型是 OUTPUT 语句支持的类型。如果 A 的类型是布尔类型，则应报告类型错误。</li>
 </ol>
-<p>濡傛灉浠讳綍璇箟妫€鏌ュけ璐ワ紝缂栬瘧鍣ㄥ繀椤绘姤鍛婅涔夐敊璇紝闃绘绋嬪簭杩愯銆?</p>
-<p>渚嬪锛屽湪鎻愪緵鐨勪吉浠ｇ爜鐨勭浜岃涓绠楄〃杈惧紡 1+2*3 鍚庯紝缁撴灉搴斾负鏁存暟绫诲瀷锛岃繖涓庡彉閲?A 鐨勫０鏄庣被鍨嬩竴鑷淬€傚鏋?A 鏄笉鍚岀被鍨嬬殑锛岀紪璇戝櫒搴旀姤鍛婄被鍨嬮敊璇紝闃绘绋嬪簭杩愯銆?</p>
-<h3 id="1-4-涓棿浠g爜鐢熸垚"><a href="#1-4-涓棿浠g爜鐢熸垚" class="headerlink" title="1.4 涓棿浠ｇ爜鐢熸垚"></a>1.4 涓棿浠ｇ爜鐢熸垚</h3><p>鎴愬姛瑙ｆ瀽婧愪唬鐮佸苟鏋勫缓浜?AST 涔嬪悗锛岀紪璇戣繃绋嬬殑涓嬩竴涓樁娈垫槸鐢熸垚涓棿浠ｇ爜銆傝繖涓€闃舵鐨勭洰鏍囨槸灏?AST 杞崲涓鸿緝浣庣骇鍒殑琛ㄧず锛氫腑闂翠唬鐮併€?</p>
-<p>涓棿浠ｇ爜閫氬父鏄簮浠ｇ爜鐨勭畝鍖栫増鏈紝鐢变竴绯诲垪鎸囦护缁勬垚锛岃繖浜涙寚浠ゅ彲浠ュ湪铏氭嫙鏈轰腑鎵ц銆?</p>
-<p>涓棿浠ｇ爜閫氬父浠ュ瓧鑺傜爜鐨勫舰寮忚〃绀猴紝姣忎釜瀛楄妭鐮佺敱鎿嶄綔鍜屾搷浣滄暟缁勬垚锛屾牸寮忎负锛?</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">鎿嶄綔 鎿嶄綔鍊?<br></code></pre></td></tr></table></figure>
+<p>如果任何语义检查失败，编译器必须报告语义错误，阻止程序运行。</p>
+<p>例如，在提供的伪代码的第二行中计算表达式 1+2*3 后，结果应为整数类型，这与变量 A 的声明类型一致。如果 A 是不同类型的，编译器应报告类型错误，阻止程序运行。</p>
+<h3 id="1-4-中间代码生成"><a href="#1-4-中间代码生成" class="headerlink" title="1.4 中间代码生成"></a>1.4 中间代码生成</h3><p>成功解析源代码并构建了 AST 之后，编译过程的下一个阶段是生成中间代码。这一阶段的目标是将 AST 转换为较低级别的表示：中间代码。</p>
+<p>中间代码通常是源代码的简化版本，由一系列指令组成，这些指令可以在虚拟机中执行。</p>
+<p>中间代码通常以字节码的形式表示，每个字节码由操作和操作数组成，格式为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">操作 操作值<br></code></pre></td></tr></table></figure>
 
-<p>鎵€鏈夊瓧鑺傜爜鍦ㄦ暟鎹爤涓婃墽琛屻€傛暟鎹爤鏀寔涓ょ鎿嶄綔锛歱ush 鍜?pop銆俻ush 鎿嶄綔灏嗗€煎瓨鍌ㄥ埌鏍堜腑锛宲op 鎿嶄綔浠庢暟鎹爤杩斿洖鏈€杩戞帹閫佺殑鍊硷紙鍗虫爤椤跺厓绱狅級锛岀劧鍚庡皢鍏朵粠鏁版嵁鏍堜腑绉婚櫎銆傝繖涓壒鎬ц绉颁负 LIFO锛堝悗杩涘厛鍑猴級銆?</p>
-<p>涓棿浠ｇ爜鐢熸垚闃舵娑夊強閬嶅巻 AST 骞朵负鏍戜腑鐨勬瘡涓妭鐐圭敓鎴愬瓧鑺傜爜銆傚彲浠ヤ娇鐢ㄥ绉嶇畻娉曟潵瀹屾垚杩欎釜杩囩▼锛屽寘鎷繁搴︿紭鍏堥亶鍘嗗拰閫掑綊涓嬮檷銆?</p>
-<p>渚嬪锛屽湪 AST 涓紝瀵逛簬琛ㄧず * 鐨勮妭鐐癸紝瀹冩湁涓や釜瀛愯妭鐐?2 鍜?3锛岄鍏堜細涓?2 鍜?3 鍒嗗埆鐢熸垚鐩稿簲鐨勫瓧鑺傜爜 <code>load_constant 2</code> 鍜?<code>load_constant 3</code>銆傜劧鍚庯紝瀵逛簬 * 鑺傜偣锛屼細鐢熸垚鐩稿簲鐨勫瓧鑺傜爜 <code>arith_op *</code>銆傚浜庤繖涓変釜瀛楄妭鐮侊紝铏氭嫙鏈洪鍏堝皢鍊?2 鍜?3 鎺ㄥ叆鏍堜腑锛岀劧鍚庡脊鍑鸿繖涓や釜鍊艰繘琛岀浉涔橈紝灏嗙粨鏋滃€?6 鎺ㄥ叆鏍堜腑銆?</p>
-<p>閫氳繃璇硶鍒嗘瀽鐢熸垚鐨?AST锛屾垜浠彲浠ヨ幏寰椾互涓嬩腑闂村瓧鑺傜爜锛?</p>
+<p>所有字节码在数据栈上执行。数据栈支持两种操作：push 和 pop。push 操作将值存储到栈中，pop 操作从数据栈返回最近推送的值（即栈顶元素），然后将其从数据栈中移除。这个特性被称为 LIFO（后进先出）。</p>
+<p>中间代码生成阶段涉及遍历 AST 并为树中的每个节点生成字节码。可以使用多种算法来完成这个过程，包括深度优先遍历和递归下降。</p>
+<p>例如，在 AST 中，对于表示 * 的节点，它有两个子节点 2 和 3，首先会为 2 和 3 分别生成相应的字节码 <code>load_constant 2</code> 和 <code>load_constant 3</code>。然后，对于 * 节点，会生成相应的字节码 <code>arith_op *</code>。对于这三个字节码，虚拟机首先将值 2 和 3 推入栈中，然后弹出这两个值进行相乘，将结果值 6 推入栈中。</p>
+<p>通过语法分析生成的 AST，我们可以获得以下中间字节码：</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">1</span>. L1: load_constant <span class="hljs-number">1</span><br><span class="hljs-attribute">2</span>. load_constant <span class="hljs-number">2</span><br><span class="hljs-attribute">3</span>. load_constant <span class="hljs-number">3</span><br><span class="hljs-attribute">4</span>. arith_op *<br><span class="hljs-attribute">5</span>. arith_op +<br><span class="hljs-attribute">6</span>. store_id <span class="hljs-number">0</span><br><span class="hljs-attribute">7</span>. L3: load_id <span class="hljs-number">0</span><br><span class="hljs-attribute">8</span>. load_constant <span class="hljs-number">5</span><br><span class="hljs-attribute">9</span>. compare_op <span class="hljs-number">143</span><br><span class="hljs-attribute">10</span>. if_false_goto <span class="hljs-number">2</span><br><span class="hljs-attribute">11</span>. L4: load_id <span class="hljs-number">0</span><br><span class="hljs-attribute">12</span>. output<br><span class="hljs-attribute">13</span>. L2:<br></code></pre></td></tr></table></figure>
 
-<p>鍏充簬姣忎釜瀛楄妭鐮佺殑鎿嶄綔缁嗚妭灏嗗湪涓嬩竴绔犲叧浜庤櫄鎷熸満鐨勭珷鑺備腑璁ㄨ銆?</p>
-<h3 id="1-5-涓棿浠g爜鎵ц"><a href="#1-5-涓棿浠g爜鎵ц" class="headerlink" title="1.5 涓棿浠ｇ爜鎵ц"></a>1.5 涓棿浠ｇ爜鎵ц</h3><p>鐢熸垚浜嗕腑闂翠唬鐮佷箣鍚庯紝缂栬瘧杩囩▼鐨勪笅涓€涓樁娈垫槸鎵ц绋嬪簭銆傝繖娑夊強浣跨敤铏氭嫙鏈烘潵鎵ц鍦ㄤ腑闂翠唬鐮佺敓鎴愰樁娈电敓鎴愮殑姣忔潯瀛楄妭鐮佹寚浠ゃ€?</p>
-<p>铏氭嫙鏈哄寘鍚瓧鑺傜爜瑙ｉ噴鍣ㄥ拰鏁版嵁鍐呭瓨銆傚瓧鑺傜爜瑙ｉ噴鍣ㄨ礋璐ｈВ鐮佸拰鎵ц姣忔潯瀛楄妭鐮佹寚浠わ紝鑰屾暟鎹唴瀛樼敤浜庡瓨鍌ㄧ▼搴忔墽琛屾湡闂存墍闇€鐨勫€笺€?</p>
-<p>铏氭嫙鏈哄涓棿浠ｇ爜鐢熸垚杩囩▼涓敓鎴愮殑瀛楄妭鐮佹墽琛屼互涓嬫搷浣滐細</p>
+<p>关于每个字节码的操作细节将在下一章关于虚拟机的章节中讨论。</p>
+<h3 id="1-5-中间代码执行"><a href="#1-5-中间代码执行" class="headerlink" title="1.5 中间代码执行"></a>1.5 中间代码执行</h3><p>生成了中间代码之后，编译过程的下一个阶段是执行程序。这涉及使用虚拟机来执行在中间代码生成阶段生成的每条字节码指令。</p>
+<p>虚拟机包含字节码解释器和数据内存。字节码解释器负责解码和执行每条字节码指令，而数据内存用于存储程序执行期间所需的值。</p>
+<p>虚拟机对中间代码生成过程中生成的字节码执行以下操作：</p>
 <ol>
-<li>锛圠1锛夊皢甯搁噺鍊?1 鎺ㄥ叆鏁版嵁鏍堛€?</li>
-<li>灏嗗父閲忓€?2 鎺ㄥ叆鏁版嵁鏍堛€?</li>
-<li>灏嗗父閲忓€?3 鎺ㄥ叆鏁版嵁鏍堛€?</li>
-<li>鎵ц涔樻硶鎿嶄綔锛坅rith_op <em>锛夛紝鏍堥《鍏冪礌鍙樹负 2</em>3 &#x3D; 6銆?</li>
-<li>鎺ヤ笅鏉ワ紝鎵ц鍔犳硶鎿嶄綔锛坅rith_op +锛夛紝寮瑰嚭椤堕儴鍏冪礌 6锛岀劧鍚庡脊鍑烘柊鐨勯《閮ㄥ厓绱?1锛岀劧鍚庡皢缁撴灉 1+6&#x3D;7 鎺ㄥ叆鏍堜腑銆?</li>
-<li>鏈€鍚庯紝灏嗚繖涓粨鏋?7 璧嬪€肩粰鍙橀噺 A锛坰tore_id 0锛夈€?</li>
-<li>锛圠3锛夊皢鍙橀噺 A 鐨勫€硷紙load_id 0锛? 鎺ㄥ叆鏍堢殑椤堕儴銆?</li>
-<li>鐒跺悗灏嗗父閲忓€?5 鎺ㄥ叆鏍堛€?</li>
-<li>鎵ц澶т簬绛変簬姣旇緝锛坈ompare_op 143锛夛紝寮瑰嚭鍏冪礌 5 鍜?7 杩涜姣旇緝銆?</li>
-<li>濡傛灉 7&gt;&#x3D;5 涓嶆垚绔嬶紝璺宠浆鍒版爣绛?2锛堢 13 琛岋級锛屽惁鍒欑户缁墽琛岀 11 琛屻€?</li>
-<li>锛圠4锛夊皢鍙橀噺 A 鐨勫€硷紙load_id 0锛夋帹鍏ユ爤涓紝</li>
-<li>鐒跺悗鎵撳嵃鏍堥《鍏冪礌 7锛坥utput锛夈€?</li>
-<li>锛圠2锛夋渶鍚庝竴琛岀粨鏉熺▼搴忕殑鎵ц銆?</li>
+<li>（L1）将常量值 1 推入数据栈。</li>
+<li>将常量值 2 推入数据栈。</li>
+<li>将常量值 3 推入数据栈。</li>
+<li>执行乘法操作（arith_op <em>），栈顶元素变为 2</em>3 &#x3D; 6。</li>
+<li>接下来，执行加法操作（arith_op +），弹出顶部元素 6，然后弹出新的顶部元素 1，然后将结果 1+6&#x3D;7 推入栈中。</li>
+<li>最后，将这个结果 7 赋值给变量 A（store_id 0）。</li>
+<li>（L3）将变量 A 的值（load_id 0）7 推入栈的顶部。</li>
+<li>然后将常量值 5 推入栈。</li>
+<li>执行大于等于比较（compare_op 143），弹出元素 5 和 7 进行比较。</li>
+<li>如果 7&gt;&#x3D;5 不成立，跳转到标签 2（第 13 行），否则继续执行第 11 行。</li>
+<li>（L4）将变量 A 的值（load_id 0）推入栈中，</li>
+<li>然后打印栈顶元素 7（output）。</li>
+<li>（L2）最后一行结束程序的执行。</li>
 </ol>
-<h2 id="缁撹"><a href="#缁撹" class="headerlink" title="缁撹"></a>缁撹</h2><p>杩欏氨鏄熀纭€鐞嗚鐨勫唴瀹? 浣犲彲浠ラ€氳繃&#96;缂栬瘧鍘熺悊璞嗙煡璇哷鍒嗙被鏉ユ煡鐪嬪叾浠栨枃绔? 鍏朵綑绔犺妭灏嗘帰璁ㄥ悇闃舵鐨勮缁嗕唬鐮佸疄鐜?</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这就是基础理论的内容, 你可以通过<code>编译原理豆知识</code>分类来查看其他文章, 其余章节将探讨各阶段的详细代码实现.</p>
 
                 
               </div>
@@ -433,7 +433,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>python缂栬瘧鍣ㄥ紑鍙?: 鍩虹鐞嗚</div>
+      <div>python编译器开发0: 基础理论</div>
       <div>https://bainianlaoyao.github.io/2023/08/23/typecho-recovered-69-python编译器开发-基础理论/</div>
     </div>
     <div class="license-meta">
@@ -488,8 +488,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/22/typecho-recovered-67-nginx-502%E9%94%99%E8%AF%AF-fastcgi%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="nginx 502閿欒 fastcgi杩炴帴澶辫触瑙ｅ喅鏂规">
-                        <span class="hidden-mobile">nginx 502閿欒 fastcgi杩炴帴澶辫触瑙ｅ喅鏂规</span>
+                      <a href="/2023/08/22/typecho-recovered-67-nginx-502%E9%94%99%E8%AF%AF-fastcgi%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="nginx 502错误 fastcgi连接失败解决方案">
+                        <span class="hidden-mobile">nginx 502错误 fastcgi连接失败解决方案</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
