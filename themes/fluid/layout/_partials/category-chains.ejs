@@ -1,4 +1,4 @@
-<% function render_category_chain(cat) { %>
+﻿<% function render_category_chain(cat) { %>
   <a href="<%= url_for(cat.path) %>" class="category-chain-item"><%= cat.name.trim() %></a>
   <% var nextCats = categories.find({ parent: cat._id }).sort(config.index_generator.order_by || 'name').filter(cat => cat.length) %>
   <% if (nextCats.length > 0) { %>
@@ -8,7 +8,7 @@
 <% } %>
 
 <span class="category-chains">
-  <% var catsFirst = categories.find({ parent: { $exists: false } }).sort(config.index_generator.order_by || 'name').filter(cat => cat.length) %>
+  <% var catsFirst = (categories && typeof categories.find === 'function') ? categories.find({ parent: { $exists: false } }) : [].sort(config.index_generator.order_by || 'name').filter(cat => cat.length) %>
   <% catsFirst.each((cat, idx) => { %>
     <% if (typeof(limit) === "undefined" || idx < limit) { %>
       <span class="category-chain">
